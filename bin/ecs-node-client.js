@@ -33,9 +33,9 @@ if (debug) {
 
 let credentials;
 try {
-    /* eslint-disable import/no-dynamic-require */
+    /* eslint-disable global-require, import/no-dynamic-require */
     credentials = require(credFile);
-    /* eslint-enable import/no-dynamic-require */
+    /* eslint-enable global-require, import/no-dynamic-require */
 
     if (!credentials.userName || !credentials.apiKey) {
         throw new Error('Please provide a \'userName\' and \'apiKey\' property in credentials file.');
