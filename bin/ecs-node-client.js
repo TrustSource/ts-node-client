@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-/*
- * Copyright (c) 2016. Enterprise Architecture Group, EACG
+/* eslint-disable */
+/**********************************************************
+ * Copyright (c) 2017. Enterprise Architecture Group, EACG
  *
  * SPDX-License-Identifier:	MIT
- */
-
-'use strict';
+ *********************************************************/
+/* eslint-enable */
 
 const BASE_URL = 'https://ecs-app.eacg.de';
 const CRED_FILENAME = '/.ecsrc.json';
@@ -22,29 +22,31 @@ const baseUrl = (process.argv.find(e => e.startsWith('--baseUrl=')) || '').subst
 const credFile = (process.argv.find(e => e.startsWith('--credentials=')) || '').substr(14) ||
                  ((process.env.USERPROFILE || process.env.HOME) + CRED_FILENAME);
 
-if(debug) {
+if (debug) {
     console.log('invoking ecs-node-client: ');
-    console.log(FILL + 'debug =',  debug);
-    console.log(FILL + 'simulate =',  simulate);
-    console.log(FILL + 'scanMeteor =',  scanMeteor);
-    console.log(FILL + 'project = |%s|',  project);
-    console.log(FILL + 'baseUrl = |%s|',  baseUrl);
+    console.log(`${FILL}debug =`, debug);
+    console.log(`${FILL}simulate =`, simulate);
+    console.log(`${FILL}scanMeteor =`, scanMeteor);
+    console.log(`${FILL}project = |%s|`, project);
+    console.log(`${FILL}baseUrl = |%s|`, baseUrl);
 }
 
 let credentials;
 try {
+    /* eslint-disable import/no-dynamic-require */
     credentials = require(credFile);
+    /* eslint-enable import/no-dynamic-require */
 
-    if(!credentials.userName || !credentials.apiKey) {
+    if (!credentials.userName || !credentials.apiKey) {
         throw new Error('Please provide a \'userName\' and \'apiKey\' property in credentials file.');
     }
 
-    if(!project) {
+    if (!project) {
         throw new Error('Please provide the project name as commandline argument \'--project=PROJECT_NAME\'.');
     }
-} catch(error) {
-    if(error.code === 'MODULE_NOT_FOUND') {
-        console.error("Credentialsfile \'%s\' not found", credFile);
+} catch (error) {
+    if (error.code === 'MODULE_NOT_FOUND') {
+        console.error('Credentialsfile \'%s\' not found', credFile);
     } else {
         console.error(error.message || error);
     }
@@ -53,24 +55,24 @@ try {
 
 let exitCode = 0;
 
-process.on('uncaughtException', function(err){
+process.on('uncaughtException', (err) => {
     console.error('Oops! Something went wrong! :(', err);
     process.exit(1);
 });
 
-process.on('SIGINT', function() {
+process.on('SIGINT', () => {
     console.error('Oops! SIGINT received! :(    -> exiting...');
     process.exit(1);
 });
 
-process.on('exit', function() {
+process.on('exit', () => {
     console.log('Exitting normal exitCode=', exitCode);
     process.exit(exitCode);
 });
 
 
 try {
-    execute({debug, simulate, project, scanMeteor, baseUrl, credentials}, function(ok){
+    execute({ debug, simulate, project, scanMeteor, baseUrl, credentials }, (ok) => {
         exitCode = ok ? 0 : 1;
     });
     console.log('cli.execute()', exitCode);

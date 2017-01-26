@@ -1,0 +1,42 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "no-console": [
+            "off"
+        ],
+        "global-require": ["off"],
+        "indent": [
+            "error",
+            4
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 140
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2
+            }
+        ],
+        "no-var": [
+            "warn"
+        ],
+        "no-param-reassign": ["off"],
+        "no-use-before-define": ["off"],
+        "newline-per-chained-call": ["off"],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ]
+    }
+}
