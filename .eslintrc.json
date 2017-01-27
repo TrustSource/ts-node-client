@@ -13,6 +13,8 @@
         "max-len": [ "error", { "code": 140 }],
         "no-multiple-empty-lines": [ "error", { "max": 2 }],
         "no-var": [ "warn" ],
+        "prefer-rest-params": ["warn"],
+        "vars-on-top": ["warn"],
         "no-param-reassign": [ "off" ],
         "no-use-before-define": [ "off" ],
         "newline-per-chained-call": [ "off" ],

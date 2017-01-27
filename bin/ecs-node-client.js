@@ -31,7 +31,7 @@ if (debug) {
     console.log(`${FILL}baseUrl = |%s|`, baseUrl);
 }
 
-let credentials;
+var credentials;
 try {
     /* eslint-disable global-require, import/no-dynamic-require */
     credentials = require(credFile);
@@ -53,10 +53,10 @@ try {
     process.exit(1);
 }
 
-let exitCode = 0;
+var exitCode = 0;
 
 process.on('uncaughtException', (err) => {
-    console.error('Oops! Something went wrong! :(', err);
+    console.error('Oops! Something went wrong! :(', err, debug ? err.stack : '');
     process.exit(1);
 });
 
