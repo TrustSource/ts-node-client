@@ -1,5 +1,6 @@
 # ecs-node-client
 
+[![Travis build status](https://travis-ci.org/eacg-gmbh/ecs-node-client.svg?branch=master)](https://travis-ci.org/eacg-gmbh/ecs-node-client)
 [![Version](https://img.shields.io/npm/v/ecs-node-client.svg)](http://npm.im/ecs-node-client)
 [![Downloads](https://img.shields.io/npm/dm/ecs-node-client.svg)](http://npm-stat.com/charts.html?package=ecs-node-client)
 [![Downloads](https://img.shields.io/npm/dt/ecs-node-client.svg)](http://npm-stat.com/charts.html?package=ecs-node-client)
