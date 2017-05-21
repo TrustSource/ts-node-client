@@ -9,7 +9,7 @@
 /* eslint-enable */
 
 const BASE_URL = 'https://ecs-app.eacg.de';
-const CRED_FILENAME = '/.ecsrc.json';
+const CRED_FILENAME = (process.argv.find(e => e.startsWith('--credentialsFile=')) || '').substr(18) || '/.ecsrc.json';
 const FILL = '                      ';
 
 const execute = require('../lib/cli');
