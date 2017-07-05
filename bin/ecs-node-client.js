@@ -4,59 +4,129 @@
 /**********************************************************
  * Copyright (c) 2017. Enterprise Architecture Group, EACG
  *
- * SPDX-License-Identifier:	MIT
+ * SPDX-License-Identifier:    MIT
  *********************************************************/
 /* eslint-enable */
+const pckgJson = require('../package.json');
+const fs = require('fs');
+const yargs = require('yargs');
 
 const BASE_URL = 'https://ecs-app.eacg.de';
-const CRED_FILENAME = (process.argv.find(e => e.startsWith('--credentialsFile=')) || '').substr(18) || '/.ecsrc.json';
+const CRED_FILENAME = '/.ecsrc.json';
 const FILL = '                      ';
-
 const execute = require('../lib/cli');
 
-const debug = (process.argv.indexOf('--debug') > -1);
-const simulate = (process.argv.indexOf('--simulate') > -1);
-const scanMeteor = (process.argv.indexOf('--meteor') > -1);
-const project = (process.argv.find(e => e.startsWith('--project=')) || '').substr(10);
-const baseUrl = (process.argv.find(e => e.startsWith('--baseUrl=')) || '').substr(10) || BASE_URL;
-const credFile = (process.argv.find(e => e.startsWith('--credentials=')) || '').substr(14) ||
-                 ((process.env.USERPROFILE || process.env.HOME) + CRED_FILENAME);
+const getOptions = () => {
+    let options = yargs
+        .options({
+            userName: {
+                alias: 'u',
+                default: null,
+                describe: 'UserName'
+            },
+            apiKey: {
+                alias: 'k',
+                default: null,
+                describe: 'apiKey'
+            },
+            project: {
+                alias: 'p',
+                default: null,
+                describe: 'Project name'
+            },
+            url: {
+                default: null,
+                describe: 'url'
+            },
+            config: {
+                alias: 'c',
+                default: null,
+                describe: 'Config path'
+            },
+            version: {
+                alias: 'v',
+                default: false,
+                describe: 'Prints a version'
+            },
+            debug: {
+                default: false,
+                describe: 'debug'
+            },
+            simulate: {
+                default: false,
+                describe: 'simulate'
+            },
+            meteor: {
+                default: false,
+                describe: 'meteor'
+            }
+        })
+        .usage(pckgJson.description)
+        .help('help', 'Prints a usage statement')
+        .fail((msg, err, yargsObject) => {
+            if (err) throw err; // preserve stack
+            console.error('Please check', yargsObject.help());
+            process.exit(1);
+        })
+        .argv;
+    if (options.version) {
+        console.info(`${pckgJson.name} version ${pckgJson.version}`);
+        process.exit(0);
+    }
+    options = (({ userName, apiKey, project, config, debug, simulate, meteor, url }) =>
+            ({ userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, baseUrl: url }))(options);
+    Object.keys(options).forEach(key => options[key] === null && delete options[key]);
+    return options;
+};
 
-if (debug) {
-    console.log('invoking ecs-node-client: ');
-    console.log(`${FILL}debug =`, debug);
-    console.log(`${FILL}simulate =`, simulate);
-    console.log(`${FILL}scanMeteor =`, scanMeteor);
-    console.log(`${FILL}project = |%s|`, project);
-    console.log(`${FILL}baseUrl = |%s|`, baseUrl);
-}
-
-var credentials;
-try {
+const loadConfig = (options) => {
+    const values = [
+        options.config ? options.config.replace('~', process.env.HOME) : null,
+        process.cwd(),
+        ((process.env.USERPROFILE || process.env.HOME) + CRED_FILENAME)
+    ].map((value) => {
+        let result = null;
+        if (fs.existsSync(value) && fs.lstatSync(value).isDirectory() && fs.existsSync(`${value}${CRED_FILENAME}`)) {
+            result = `${value}${CRED_FILENAME}`;
+        } else if (fs.existsSync(value) && fs.lstatSync(value).isFile()) {
+            result = value;
+        }
+        return !result || result[0] === '/' ? result : `../${result}`;
+    }).filter(value => value);
     /* eslint-disable global-require, import/no-dynamic-require */
-    credentials = require(credFile);
+    return values[0] ? require(values[0]) : {};
     /* eslint-enable global-require, import/no-dynamic-require */
+};
 
-    if (!credentials.userName || !credentials.apiKey) {
+const validateOptions = (options) => {
+    if (!options.userName || !options.apiKey) {
         throw new Error('Please provide a \'userName\' and \'apiKey\' property in credentials file.');
     }
 
-    if (!project) {
-        throw new Error('Please provide the project name as commandline argument \'--project=PROJECT_NAME\'.');
+    if (!options.project) {
+        throw new Error('Please provide a \'project\' property in credentials file.');
     }
-} catch (error) {
-    if (error.code === 'MODULE_NOT_FOUND') {
-        console.error('Credentialsfile \'%s\' not found', credFile);
-    } else {
-        console.error(error.message || error);
-    }
-    process.exit(1);
+};
+
+let options = getOptions();
+options = Object.assign({ baseUrl: BASE_URL }, loadConfig(options), options);
+validateOptions(options);
+
+if (options.debug) {
+    console.log('invoking ecs-node-client: ');
+    console.log(`${FILL}debug =`, options.debug);
+    console.log(`${FILL}simulate =`, options.simulate);
+    console.log(`${FILL}scanMeteor =`, options.scanMeteor);
+    console.log(`${FILL}userName = |%s|`, options.userName);
+    console.log(`${FILL}apiKey = |%s|`, options.apiKey);
+    console.log(`${FILL}project = |%s|`, options.project);
+    console.log(`${FILL}baseUrl = |%s|`, options.baseUrl);
 }
 
-var exitCode = 0;
+let exitCode = 0;
 
 process.on('uncaughtException', (err) => {
-    console.error('Oops! Something went wrong! :(', err, debug ? err.stack : '');
+    console.error('Oops! Something went wrong! :(', err, options.debug ? err.stack : '');
     process.exit(1);
 });
 
@@ -72,7 +142,7 @@ process.on('exit', () => {
 
 
 try {
-    execute({ debug, simulate, project, scanMeteor, baseUrl, credentials }, (ok) => {
+    execute(options, (ok) => {
         exitCode = ok ? 0 : 1;
     });
     console.log('cli.execute()', exitCode);
