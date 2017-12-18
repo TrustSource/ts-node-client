@@ -11,7 +11,7 @@ const pckgJson = require('../package.json');
 const fs = require('fs');
 const yargs = require('yargs');
 
-const BASE_URL = 'https://ecs-app.eacg.de';
+const URL = 'https://ecs-app.eacg.de';
 const CRED_FILENAME = '/.ecsrc.json';
 const FILL = '                      ';
 const execute = require('../lib/cli');
@@ -74,7 +74,7 @@ const getOptions = () => {
         process.exit(0);
     }
     options = (({ userName, apiKey, project, config, debug, simulate, meteor, url }) =>
-            ({ userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, baseUrl: url }))(options);
+            ({ userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, url }))(options);
     Object.keys(options).forEach(key => options[key] === null && delete options[key]);
     return options;
 };
@@ -91,7 +91,7 @@ const loadConfig = (options) => {
         } else if (fs.existsSync(value) && fs.lstatSync(value).isFile()) {
             result = value;
         }
-        return !result || result[0] === '/' ? result : `../${result}`;
+        return !result || result.match(/^([a-zA-Z]:)?(\/|\\)/) ? result : `../../../${result}`;
     }).filter(value => value);
     /* eslint-disable global-require, import/no-dynamic-require */
     return values[0] ? require(values[0]) : {};
@@ -109,7 +109,7 @@ const validateOptions = (options) => {
 };
 
 let options = getOptions();
-options = Object.assign({ baseUrl: BASE_URL }, loadConfig(options), options);
+options = Object.assign({ url: URL }, loadConfig(options), options);
 validateOptions(options);
 
 if (options.debug) {
@@ -120,7 +120,7 @@ if (options.debug) {
     console.log(`${FILL}userName = |%s|`, options.userName);
     console.log(`${FILL}apiKey = |%s|`, options.apiKey);
     console.log(`${FILL}project = |%s|`, options.project);
-    console.log(`${FILL}baseUrl = |%s|`, options.baseUrl);
+    console.log(`${FILL}url = |%s|`, options.url);
 }
 
 let exitCode = 0;

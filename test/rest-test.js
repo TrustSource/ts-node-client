@@ -11,7 +11,7 @@ const assert = require('assert');
 const nock = require('nock');
 const RestClient = require('../lib/rest-client').RestClient;
 
-const baseUrl = 'http://localhost:3000';
+const url = 'http://localhost:3000';
 
 /* eslint-disable no-new */
 describe('RestClient', () => {
@@ -21,14 +21,14 @@ describe('RestClient', () => {
                 new RestClient();
             }, TypeError);
         });
-        it('should throw Error if no baseUrl attribute defined', () => {
+        it('should throw Error if no url attribute defined', () => {
             assert.throws(() => {
                 new RestClient({});
             }, TypeError);
         });
-        it('should accept baseUrl attribute', () => {
+        it('should accept url attribute', () => {
             assert.doesNotThrow(() => {
-                const restClient = new RestClient({ baseUrl });
+                const restClient = new RestClient({ url });
                 assert.notEqual(restClient, undefined);
             });
         });
@@ -38,11 +38,11 @@ describe('RestClient', () => {
         var restClient;
 
         beforeEach(() => {
-            restClient = new RestClient({ baseUrl: 'http://localhost:3000' });
+            restClient = new RestClient({ url: 'http://localhost:3000' });
         });
 
         it('should call callback with response data if no error orccurs', (done) => {
-            nock(baseUrl, {
+            nock(url, {
                 reqheaders: {
                     'Content-Type': 'application/json'
                 }
@@ -56,7 +56,7 @@ describe('RestClient', () => {
         });
 
         it('response should be parsed as json object, if \'content-type\': \'application/json\'', (done) => {
-            nock(baseUrl, {
+            nock(url, {
                 reqheaders: {
                     'Content-Type': 'application/json'
                 }

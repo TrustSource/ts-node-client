@@ -73,6 +73,10 @@ Options:
 
 ## Changelog
 
+#### 0.2.1
+- Added windows support
+- Fixed json 
+
 #### 0.2.0
 - **Removed:**
     - options: **--credentials** and **--credentialsFile** instead you should use **--config**.
