@@ -73,6 +73,9 @@ Options:
 
 ## Changelog
 
+#### 0.2.2
+- Updated default url to `app.trustsource.io`
+
 #### 0.2.1
 - Added windows support
 - Fixed json 
