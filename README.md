@@ -10,7 +10,7 @@
 
 EACG Code Scan node client
 
-> node module to transfer dependency information to ECS server.
+> node module to transfer dependency information to TrustSource server.
 
 ## Requirements
 
@@ -48,7 +48,7 @@ To store your credentials for automated transfer you may create `.ecsrc.json` in
 Usage
 =====
 
-You also may initiate transfer to ECS server manually by executing following command via terminal:
+You also may initiate transfer to TrustSource server manually by executing following command via terminal:
 
 ```
 node_modules/.bin/ecs-node-client
@@ -56,7 +56,7 @@ node_modules/.bin/ecs-node-client -u userName -k apiKey -p Project
 node_modules/.bin/ecs-node-client -c config.json
 ```
 ```
-npm / node module to transfer dependency information to ECS server.
+npm / node module to transfer dependency information to TrustSource server.
 
 Options:
   --userName, -u  UserName                                       [default: null]
