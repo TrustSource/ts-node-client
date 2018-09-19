@@ -1,9 +1,9 @@
 {
   "name": "ecs-node-client",
-  "description": "npm / node module to transfer dependency information to ECS server.",
+  "description": "npm / node module to transfer dependency information to TrustSource server.",
   "version": "0.2.2",
   "private": false,
-  "homepage": "https://ecs.eacg.de",
+  "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Gerhard Dickescheid",
     "email": "gdd@eacg.de"
