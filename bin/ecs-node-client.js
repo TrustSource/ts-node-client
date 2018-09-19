@@ -11,7 +11,7 @@ const pckgJson = require('../package.json');
 const fs = require('fs');
 const yargs = require('yargs');
 
-const URL = 'https://ecs-app.eacg.de';
+const URL = 'https://app.trustsource.io';
 const CRED_FILENAME = '/.ecsrc.json';
 const FILL = '                      ';
 const execute = require('../lib/cli');
