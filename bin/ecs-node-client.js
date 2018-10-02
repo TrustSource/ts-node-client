@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /* eslint-disable */
-/**********************************************************
- * Copyright (c) 2017. Enterprise Architecture Group, EACG
+/**************************************************************
+ * Copyright (c) 2017. Enterprise Architecture Group, EACG GmbH
  *
  * SPDX-License-Identifier:    MIT
- *********************************************************/
+ *************************************************************/
 /* eslint-enable */
 const pckgJson = require('../package.json');
 const fs = require('fs');

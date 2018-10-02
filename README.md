@@ -1,4 +1,4 @@
-# ecs-node-client
+# TrustSource ecs-node-client
 
 [![Travis build status](https://travis-ci.org/eacg-gmbh/ecs-node-client.svg?branch=master)](https://travis-ci.org/eacg-gmbh/ecs-node-client)
 [![Version](https://img.shields.io/npm/v/ecs-node-client.svg)](http://npm.im/ecs-node-client)
@@ -8,7 +8,7 @@
 
 [![npm package](https://nodei.co/npm/ecs-node-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ecs-node-client/)
 
-EACG Code Scan node client
+TrustSource node client
 
 > node module to transfer dependency information to TrustSource server.
 
@@ -39,7 +39,7 @@ To store your credentials for automated transfer you may create `.ecsrc.json` in
 {
   "userName": "UserName",
   "apiKey": "apiKey",
-  "url": "url",
+  "url": "https://app.trustsource.io",
   "project": "Project Description"
 }
 
