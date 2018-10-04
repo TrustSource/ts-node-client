@@ -73,6 +73,9 @@ Options:
 
 ## Changelog
 
+#### 0.2.3
+- Updated README.md with `app.trustsource.io`
+
 #### 0.2.2
 - Updated default url to `app.trustsource.io`
 

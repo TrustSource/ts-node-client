@@ -1,7 +1,7 @@
 {
   "name": "ecs-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
