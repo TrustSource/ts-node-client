@@ -73,6 +73,9 @@ Options:
 
 ## Changelog
 
+#### 0.2.4
+- Update travis config
+
 #### 0.2.3
 - Updated README.md with `app.trustsource.io`
 

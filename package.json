@@ -1,7 +1,7 @@
 {
   "name": "ecs-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">= 4.2.0"
   },
   "main": "./lib/cli.js",
   "bin": {
