@@ -59,19 +59,23 @@ node_modules/.bin/ecs-node-client -c config.json
 npm / node module to transfer dependency information to TrustSource server.
 
 Options:
-  --userName, -u  UserName                                       [default: null]
-  --apiKey, -k    apiKey                                         [default: null]
-  --project, -p   Project name                                   [default: null]
-  --url           url                                            [default: null]
-  --config, -c    Config path                                    [default: null]
-  --version, -v   Prints a version                              [default: false]
-  --debug         debug                                         [default: false]
-  --simulate      simulate                                      [default: false]
-  --meteor        meteor                                        [default: false]
-  --help          Prints a usage statement                             [boolean]
+  --userName, -u  UserName                                           [default: null]
+  --apiKey, -k    apiKey                                             [default: null]
+  --project, -p   Project name                                       [default: null]
+  --url           url                                                [default: null]
+  --config, -c    Config path                                        [default: null]
+  --proxy         Proxy url like 'http://user:password@host:port'    [default: null]
+  --version, -v   Prints a version                                   [default: false]
+  --debug         debug                                              [default: false]
+  --simulate      simulate                                           [default: false]
+  --meteor        meteor                                             [default: false]
+  --help          Prints a usage statement                           [boolean]
 ```
 
 ## Changelog
+
+#### 0.2.5
+- Added proxy support and config
 
 #### 0.2.4
 - Update travis config

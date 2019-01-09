@@ -43,6 +43,10 @@ const getOptions = () => {
                 default: null,
                 describe: 'Config path'
             },
+            proxy: {
+                default: null,
+                describe: 'Proxy url'
+            },
             version: {
                 alias: 'v',
                 default: false,
@@ -73,8 +77,8 @@ const getOptions = () => {
         console.info(`${pckgJson.name} version ${pckgJson.version}`);
         process.exit(0);
     }
-    options = (({ userName, apiKey, project, config, debug, simulate, meteor, url }) =>
-            ({ userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, url }))(options);
+    options = (({ userName, apiKey, project, config, debug, simulate, meteor, url, proxy }) =>
+            ({ userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, url, proxy }))(options);
     Object.keys(options).forEach(key => options[key] === null && delete options[key]);
     return options;
 };
@@ -121,6 +125,7 @@ if (options.debug) {
     console.log(`${FILL}apiKey = |%s|`, options.apiKey);
     console.log(`${FILL}project = |%s|`, options.project);
     console.log(`${FILL}url = |%s|`, options.url);
+    console.log(`${FILL}proxy = |%s|`, options.proxy);
 }
 
 let exitCode = 0;
