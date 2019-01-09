@@ -35,7 +35,7 @@ describe('RestClient', () => {
     });
 
     describe('transfer method', () => {
-        let restClient;
+        var restClient;
 
         beforeEach(() => {
             restClient = new RestClient({ url: 'http://localhost:3000' });

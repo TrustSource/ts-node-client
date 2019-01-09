@@ -215,7 +215,7 @@ describe('Dependency', () => {
     });
 
     describe('addDependency()', () => {
-        let target;
+        var target;
         beforeEach(() => {
             target = new Dependency('target', '1.0', '---');
         });
@@ -250,7 +250,7 @@ describe('Dependency', () => {
     });
 
     describe('addDependencies()', () => {
-        let target;
+        var target;
 
         beforeEach(() => {
             target = new Dependency('target', '1.0', '---');

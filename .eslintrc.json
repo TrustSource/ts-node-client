@@ -19,6 +19,7 @@
         "no-use-before-define": [ "off" ],
         "newline-per-chained-call": [ "off" ],
         "comma-dangle": [ "error", "never" ],
+        "linebreak-style": ["off"],
         "quotes": [ "error", "single" ]
     }
 }
