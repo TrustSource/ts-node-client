@@ -9,7 +9,7 @@
 
 const assert = require('assert');
 const nock = require('nock');
-const RestClient = require('../lib/rest-client').RestClient;
+const { RestClient } = require('../lib/rest-client');
 
 const url = 'http://localhost:3000';
 
@@ -35,7 +35,7 @@ describe('RestClient', () => {
     });
 
     describe('transfer method', () => {
-        var restClient;
+        let restClient;
 
         beforeEach(() => {
             restClient = new RestClient({ url: 'http://localhost:3000' });

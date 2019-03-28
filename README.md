@@ -74,6 +74,9 @@ Options:
 
 ## Changelog
 
+#### 0.3.0
+- Update dependency to resolve vulnerabilities
+
 #### 0.2.5
 - Added proxy support and config
 

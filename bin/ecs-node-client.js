@@ -7,9 +7,9 @@
  * SPDX-License-Identifier:    MIT
  *************************************************************/
 /* eslint-enable */
-const pckgJson = require('../package.json');
 const fs = require('fs');
 const yargs = require('yargs');
+const pckgJson = require('../package.json');
 
 const URL = 'https://app.trustsource.io';
 const CRED_FILENAME = '/.ecsrc.json';
@@ -77,8 +77,11 @@ const getOptions = () => {
         console.info(`${pckgJson.name} version ${pckgJson.version}`);
         process.exit(0);
     }
-    options = (({ userName, apiKey, project, config, debug, simulate, meteor, url, proxy }) =>
-            ({ userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, url, proxy }))(options);
+    options = (({
+        userName, apiKey, project, config, debug, simulate, meteor, url, proxy
+    }) => ({
+        userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, url, proxy
+    }))(options);
     Object.keys(options).forEach(key => options[key] === null && delete options[key]);
     return options;
 };

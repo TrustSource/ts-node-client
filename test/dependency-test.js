@@ -143,11 +143,11 @@ describe('Dependency', () => {
 
         it('should extract additional repo-protocol from url', () => {
             assert.deepEqual(new Dependency('name', 'version', '---', 'description', '---', '---', 'home',
-                    'git+https://github.com/eacg-gmbh/ecs-grunt-plugin.git').repoUrl,
-                'https://github.com/eacg-gmbh/ecs-grunt-plugin.git');
+                'git+https://github.com/eacg-gmbh/ecs-grunt-plugin.git').repoUrl,
+            'https://github.com/eacg-gmbh/ecs-grunt-plugin.git');
             assert.deepEqual(new Dependency('name', 'version', '---', 'description', '---', '---', 'home',
-                    'svn+http://svnrepo.com/test.svn').repoUrl,
-                'http://svnrepo.com/test.svn');
+                'svn+http://svnrepo.com/test.svn').repoUrl,
+            'http://svnrepo.com/test.svn');
         });
 
 
@@ -215,7 +215,7 @@ describe('Dependency', () => {
     });
 
     describe('addDependency()', () => {
-        var target;
+        let target;
         beforeEach(() => {
             target = new Dependency('target', '1.0', '---');
         });
@@ -250,7 +250,7 @@ describe('Dependency', () => {
     });
 
     describe('addDependencies()', () => {
-        var target;
+        let target;
 
         beforeEach(() => {
             target = new Dependency('target', '1.0', '---');
