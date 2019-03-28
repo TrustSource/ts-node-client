@@ -14,11 +14,12 @@ TrustSource node client
 
 ## Requirements
 
+* node >= 6.17.0
 * debuglog >= 1.0.1
-* npm >= 4.1.1
-* request >= 2.79.0
-* semver >= 5.3.0
-* yargs >= 8.0.2
+* npm >= 3.10.10
+* request >= 2.88.0
+* semver >= 6.0.0
+* yargs >= 13.2.2
 
 ## Installation
 Run: `npm install ecs-node-client`
@@ -73,6 +74,9 @@ Options:
 ```
 
 ## Changelog
+
+#### 0.3.1
+- Update travis config
 
 #### 0.3.0
 - Update dependency to resolve vulnerabilities
