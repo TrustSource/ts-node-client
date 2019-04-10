@@ -75,6 +75,9 @@ Options:
 
 ## Changelog
 
+#### 0.3.2
+- Skip npmDependency without names
+
 #### 0.3.1
 - Update travis config
 
