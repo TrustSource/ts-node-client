@@ -1,7 +1,7 @@
 {
   "name": "ecs-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -21,6 +21,7 @@
     "ecs-node-client": "./bin/ecs-node-client.js"
   },
   "scripts": {
+    "scan": "node ./bin/ecs-node-client.js --debug",
     "scan-prod": "ecs-node-client --debug",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",

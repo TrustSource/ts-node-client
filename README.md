@@ -63,6 +63,8 @@ Options:
   --userName, -u  UserName                                           [default: null]
   --apiKey, -k    apiKey                                             [default: null]
   --project, -p   Project name                                       [default: null]
+  --branch, -b    Scan branch                                        [default: null]
+  --tag, -t       Scan tag                                           [default: null]
   --url           url                                                [default: null]
   --config, -c    Config path                                        [default: null]
   --proxy         Proxy url like 'http://user:password@host:port'    [default: null]
@@ -74,6 +76,9 @@ Options:
 ```
 
 ## Changelog
+
+#### 0.3.3
+- Support usage of scan meta params: branch and tag inside Options definition
 
 #### 0.3.2
 - Skip npmDependency without names

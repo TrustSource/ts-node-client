@@ -34,6 +34,16 @@ const getOptions = () => {
                 default: null,
                 describe: 'Project name'
             },
+            branch: {
+                alias: 'b',
+                default: null,
+                describe: 'Scan branch'
+            },
+            tag: {
+                alias: 't',
+                default: null,
+                describe: 'Scan tag'
+            },
             url: {
                 default: null,
                 describe: 'url'
@@ -78,9 +88,9 @@ const getOptions = () => {
         process.exit(0);
     }
     options = (({
-        userName, apiKey, project, config, debug, simulate, meteor, url, proxy
+        userName, apiKey, project, branch, tag, config, debug, simulate, meteor, url, proxy
     }) => ({
-        userName, apiKey, project, config, debug, simulate, scanMeteor: meteor, url, proxy
+        userName, apiKey, project, branch, tag, config, debug, simulate, scanMeteor: meteor, url, proxy
     }))(options);
     Object.keys(options).forEach(key => options[key] === null && delete options[key]);
     return options;
@@ -127,6 +137,8 @@ if (options.debug) {
     console.log(`${FILL}userName = |%s|`, options.userName);
     console.log(`${FILL}apiKey = |%s|`, options.apiKey);
     console.log(`${FILL}project = |%s|`, options.project);
+    console.log(`${FILL}branch = |%s|`, options.branch);
+    console.log(`${FILL}tag = |%s|`, options.tag);
     console.log(`${FILL}url = |%s|`, options.url);
     console.log(`${FILL}proxy = |%s|`, options.proxy);
 }
