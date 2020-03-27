@@ -77,6 +77,12 @@ Options:
 
 ## Changelog
 
+#### 1.0.0
+- Node JS and dependencies updates "node": ">= 8.12.0"
+
+#### 0.3.4 - 0.3.6
+- Improve variable usage and tasks migration
+
 #### 0.3.3
 - Support usage of scan meta params: branch and tag inside Options definition
 

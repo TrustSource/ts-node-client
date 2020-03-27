@@ -92,7 +92,7 @@ const getOptions = () => {
     }) => ({
         userName, apiKey, project, branch, tag, config, debug, simulate, scanMeteor: meteor, url, proxy
     }))(options);
-    Object.keys(options).forEach(key => options[key] === null && delete options[key]);
+    Object.keys(options).forEach((key) => options[key] === null && delete options[key]);
     return options;
 };
 
@@ -109,7 +109,7 @@ const loadConfig = (options) => {
             result = value;
         }
         return !result || result.match(/^([a-zA-Z]:)?(\/|\\)/) ? result : `../../../${result}`;
-    }).filter(value => value);
+    }).filter((value) => value);
     /* eslint-disable global-require, import/no-dynamic-require */
     return values[0] ? require(values[0]) : {};
     /* eslint-enable global-require, import/no-dynamic-require */
@@ -126,7 +126,7 @@ const validateOptions = (options) => {
 };
 
 let options = getOptions();
-options = Object.assign({ url: URL }, loadConfig(options), options);
+options = { url: URL, ...loadConfig(options), ...options };
 validateOptions(options);
 
 if (options.debug) {
