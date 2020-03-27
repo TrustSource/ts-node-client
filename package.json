@@ -1,5 +1,5 @@
 {
-  "name": "ecs-node-client",
+  "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
   "version": "0.3.3",
   "private": false,
@@ -10,19 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eacg-gmbh/ecs-node-client.git"
+    "url": "https://github.com/TrustSource/ts-node-client.git"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">= 6.17.0"
   },
   "main": "./lib/cli.js",
   "bin": {
-    "ecs-node-client": "./bin/ecs-node-client.js"
+    "ts-node-client": "./bin/ts-node-client.js"
   },
   "scripts": {
-    "scan": "node ./bin/ecs-node-client.js --debug",
-    "scan-prod": "ecs-node-client --debug",
+    "scan": "node ./bin/ts-node-client.js --debug",
+    "scan-prod": "ts-node-client --debug",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
     "test": "mocha test",

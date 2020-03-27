@@ -12,7 +12,7 @@ const yargs = require('yargs');
 const pckgJson = require('../package.json');
 
 const URL = 'https://app.trustsource.io';
-const CRED_FILENAME = '/.ecsrc.json';
+const CRED_FILENAME = '/.tsrc.json';
 const FILL = '                      ';
 const execute = require('../lib/cli');
 
@@ -130,7 +130,7 @@ options = Object.assign({ url: URL }, loadConfig(options), options);
 validateOptions(options);
 
 if (options.debug) {
-    console.log('invoking ecs-node-client: ');
+    console.log('invoking ts-node-client: ');
     console.log(`${FILL}debug =`, options.debug);
     console.log(`${FILL}simulate =`, options.simulate);
     console.log(`${FILL}scanMeteor =`, options.scanMeteor);

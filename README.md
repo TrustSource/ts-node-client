@@ -1,12 +1,12 @@
-# TrustSource ecs-node-client
+# TrustSource ts-node-client
 
-[![Travis build status](https://travis-ci.org/eacg-gmbh/ecs-node-client.svg?branch=master)](https://travis-ci.org/eacg-gmbh/ecs-node-client)
-[![Version](https://img.shields.io/npm/v/ecs-node-client.svg)](http://npm.im/ecs-node-client)
-[![Downloads](https://img.shields.io/npm/dm/ecs-node-client.svg)](http://npm-stat.com/charts.html?package=ecs-node-client)
-[![Downloads](https://img.shields.io/npm/dt/ecs-node-client.svg)](http://npm-stat.com/charts.html?package=ecs-node-client)
-[![MIT License](https://img.shields.io/npm/l/check-dependencies.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![Travis build status](https://travis-ci.org/TrustSource/ts-node-client.svg?branch=master)](https://travis-ci.org/TrustSource/ts-node-client)
+[![Version](https://img.shields.io/npm/v/ts-node-client.svg)](http://npm.im/ts-node-client)
+[![Downloads](https://img.shields.io/npm/dm/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
+[![Downloads](https://img.shields.io/npm/dt/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
+[![Apache-2.0 License](https://img.shields.io/npm/l/check-dependencies.svg?style=flat-square)](http://opensource.org/licenses/Apache-2.0)
 
-[![npm package](https://nodei.co/npm/ecs-node-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ecs-node-client/)
+[![npm package](https://nodei.co/npm/ts-node-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ts-node-client/)
 
 TrustSource node client
 
@@ -22,19 +22,19 @@ TrustSource node client
 * yargs >= 13.2.2
 
 ## Installation
-Run: `npm install ecs-node-client`
+Run: `npm install ts-node-client`
 
 You can add `install_and_scan` script to the package.json file to install and transfer dependency information using one command `npm run install_and_scan`:
 
 ```
 "scripts": {
-  "install_and_scan": "npm install && ecs-node-client -u userName -k apiKey -p Project"
+  "install_and_scan": "npm install && ts-node-client -u userName -k apiKey -p Project"
 },
 ```
 
-To store your credentials for automated transfer you may create `.ecsrc.json` in your project directory or in your home directory to set credentials globally (not recommended!)
+To store your credentials for automated transfer you may create `.tsrc.json` in your project directory or in your home directory to set credentials globally (not recommended!)
 
-`.ecsrc.json` example:
+`.tsrc.json` example:
 
 ```
 {
@@ -52,9 +52,9 @@ Usage
 You also may initiate transfer to TrustSource server manually by executing following command via terminal:
 
 ```
-node_modules/.bin/ecs-node-client
-node_modules/.bin/ecs-node-client -u userName -k apiKey -p Project
-node_modules/.bin/ecs-node-client -c config.json
+node_modules/.bin/ts-node-client
+node_modules/.bin/ts-node-client -u userName -k apiKey -p Project
+node_modules/.bin/ts-node-client -c config.json
 ```
 ```
 npm / node module to transfer dependency information to TrustSource server.
@@ -112,9 +112,9 @@ Options:
 - Added:
     - option **--config**. It is similar to credentials but it will contains any config information.
     - option **--url**. It is similar to baseUrl.
-    - option **--apiKey** and **--userName** so it will be unnecessary to create `.ecsrc.json` file.
+    - option **--apiKey** and **--userName** so it will be unnecessary to create `.tsrc.json` file.
     - options **--version** and **--help**.
     - options shortcuts.
 
 ## License
-[MIT](https://github.com/eacg-gmbh/ecs-node-client/blob/master/LICENSE)
+[Apache-2.0](https://github.com/TrustSource/ts-node-client/blob/master/LICENSE)
