@@ -14,15 +14,15 @@ TrustSource node client
 
 ## Requirements
 
-* node >= 6.17.0
+* node >= 8.12.0
 * debuglog >= 1.0.1
-* npm >= 3.10.10
-* request >= 2.88.0
-* semver >= 6.0.0
-* yargs >= 13.2.2
+* npm >= 6.4.0
+* request >= 2.88.2
+* semver >= 7.1.3
+* yargs >= 15.3.1
 
 ## Installation
-Run: `npm install ts-node-client`
+Run: `npm install --save-dev ts-node-client` or `yarn add --dev ts-node-client`
 
 You can add `install_and_scan` script to the package.json file to install and transfer dependency information using one command `npm run install_and_scan`:
 
