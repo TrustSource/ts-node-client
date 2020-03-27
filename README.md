@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/npm/v/ts-node-client.svg)](http://npm.im/ts-node-client)
 [![Downloads](https://img.shields.io/npm/dm/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
 [![Downloads](https://img.shields.io/npm/dt/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
-[![Apache-2.0 License](https://img.shields.io/npm/l/check-dependencies.svg?style=flat-square)](http://opensource.org/licenses/Apache-2.0)
+[![Apache-2.0 License](https://img.shields.io/npm/l/ts-node-client?style=flat-square)](http://opensource.org/licenses/Apache-2.0)
 
 [![npm package](https://nodei.co/npm/ts-node-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ts-node-client/)
 

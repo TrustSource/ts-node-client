@@ -4,7 +4,7 @@
 /**************************************************************
  * Copyright (c) 2017. Enterprise Architecture Group, EACG GmbH
  *
- * SPDX-License-Identifier:    MIT
+ * SPDX-License-Identifier:    Apache-2.0
  *************************************************************/
 /* eslint-enable */
 const fs = require('fs');
