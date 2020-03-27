@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -44,7 +44,7 @@
     "dependency-analysis"
   ],
   "devDependencies": {
-    "ecs-node-client": "0.2.5",
+    "ts-node-client": "0.3.3",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
