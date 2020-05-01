@@ -40,8 +40,8 @@ const getOptions = () => {
                 describe: 'Scan tag'
             },
             binaryLinks: {
-              default: null,
-              describe: 'Binary links separated by comma'
+                default: null,
+                describe: 'Binary links separated by comma'
             },
             url: {
                 default: null,
