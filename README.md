@@ -63,6 +63,7 @@ Options:
   --project, -p   Project name                                       [default: null]
   --branch, -b    Scan branch                                        [default: null]
   --tag, -t       Scan tag                                           [default: null]
+  --binaryLinks   Binary links separated by comma                    [default: null]
   --url           url                                                [default: null]
   --config, -c    Config path                                        [default: null]
   --proxy         Proxy url like 'http://user:password@host:port'    [default: null]
@@ -75,7 +76,7 @@ Options:
 
 ## Changelog
 
-#### 1.1.0
+#### 1.1.1
 - userName is not required param for scans
 - Support usage of scan meta param binaryLinks inside Options definition
 
