@@ -28,7 +28,7 @@ You can add `install_and_scan` script to the package.json file to install and tr
 
 ```
 "scripts": {
-  "install_and_scan": "npm install && ts-node-client -u userName -k apiKey -p Project"
+  "install_and_scan": "npm install && ts-node-client -k apiKey -p Project"
 },
 ```
 
@@ -38,7 +38,6 @@ To store your credentials for automated transfer you may create `.tsrc.json` in 
 
 ```
 {
-  "userName": "UserName",
   "apiKey": "apiKey",
   "url": "https://app.trustsource.io",
   "project": "Project Description"
@@ -53,14 +52,13 @@ You also may initiate transfer to TrustSource server manually by executing follo
 
 ```
 node_modules/.bin/ts-node-client
-node_modules/.bin/ts-node-client -u userName -k apiKey -p Project
+node_modules/.bin/ts-node-client -k apiKey -p Project
 node_modules/.bin/ts-node-client -c config.json
 ```
 ```
 npm / node module to transfer dependency information to TrustSource server.
 
 Options:
-  --userName, -u  UserName                                           [default: null]
   --apiKey, -k    apiKey                                             [default: null]
   --project, -p   Project name                                       [default: null]
   --branch, -b    Scan branch                                        [default: null]
@@ -76,6 +74,11 @@ Options:
 ```
 
 ## Changelog
+
+#### 1.1.0
+- userName is not required param for scans
+- Support usage of scan meta param binaryLinks inside Options definition
+
 
 #### 1.0.0
 - Node JS and dependencies updates "node": ">= 8.12.0"

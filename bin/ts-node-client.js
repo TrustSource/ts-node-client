@@ -19,11 +19,6 @@ const execute = require('../lib/cli');
 const getOptions = () => {
     let options = yargs
         .options({
-            userName: {
-                alias: 'u',
-                default: null,
-                describe: 'UserName'
-            },
             apiKey: {
                 alias: 'k',
                 default: null,
@@ -43,6 +38,10 @@ const getOptions = () => {
                 alias: 't',
                 default: null,
                 describe: 'Scan tag'
+            },
+            binaryLinks: {
+              default: null,
+              describe: 'Binary links separated by comma'
             },
             url: {
                 default: null,
@@ -88,9 +87,9 @@ const getOptions = () => {
         process.exit(0);
     }
     options = (({
-        userName, apiKey, project, branch, tag, config, debug, simulate, meteor, url, proxy
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy
     }) => ({
-        userName, apiKey, project, branch, tag, config, debug, simulate, scanMeteor: meteor, url, proxy
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy
     }))(options);
     Object.keys(options).forEach((key) => options[key] === null && delete options[key]);
     return options;
@@ -116,8 +115,8 @@ const loadConfig = (options) => {
 };
 
 const validateOptions = (options) => {
-    if (!options.userName || !options.apiKey) {
-        throw new Error('Please provide a \'userName\' and \'apiKey\' property in credentials file.');
+    if (!options.apiKey) {
+        throw new Error('Please provide a \'apiKey\' property in credentials file.');
     }
 
     if (!options.project) {
@@ -134,11 +133,11 @@ if (options.debug) {
     console.log(`${FILL}debug =`, options.debug);
     console.log(`${FILL}simulate =`, options.simulate);
     console.log(`${FILL}scanMeteor =`, options.scanMeteor);
-    console.log(`${FILL}userName = |%s|`, options.userName);
     console.log(`${FILL}apiKey = |%s|`, options.apiKey);
     console.log(`${FILL}project = |%s|`, options.project);
     console.log(`${FILL}branch = |%s|`, options.branch);
     console.log(`${FILL}tag = |%s|`, options.tag);
+    console.log(`${FILL}binaryLinks = |%s|`, options.binaryLinks);
     console.log(`${FILL}url = |%s|`, options.url);
     console.log(`${FILL}proxy = |%s|`, options.proxy);
 }
