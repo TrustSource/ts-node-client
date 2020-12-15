@@ -71,12 +71,18 @@ Options:
   --debug         debug                                              [default: false]
   --simulate      simulate                                           [default: false]
   --meteor        meteor                                             [default: false]
+  --brakeOnWarnings                                                  [default: false]
+  --brakeOnViolations                                                [default: false]
   --help          Prints a usage statement                           [boolean]
 ```
 
 ## Changelog
 
-#### 1.1.1
+
+#### 1.2.0
+- Support usage of scan params brakeOnWarnings and brakeOnViolations
+
+#### 1.1.2
 - userName is not required param for scans
 - Support usage of scan meta param binaryLinks inside Options definition
 

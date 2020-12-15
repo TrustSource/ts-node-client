@@ -72,6 +72,14 @@ const getOptions = () => {
             meteor: {
                 default: false,
                 describe: 'meteor'
+            },
+            brakeOnWarnings: {
+                default: false,
+                describe: 'brakeOnWarnings'
+            },
+            brakeOnViolations: {
+                default: false,
+                describe: 'brakeOnViolations'
             }
         })
         .usage(pckgJson.description)
@@ -87,9 +95,10 @@ const getOptions = () => {
         process.exit(0);
     }
     options = (({
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy, brakeOnWarnings, brakeOnViolations
     }) => ({
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy
+        // eslint-disable-next-line max-len
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy, brakeOnWarnings, brakeOnViolations
     }))(options);
     Object.keys(options).forEach((key) => options[key] === null && delete options[key]);
     return options;
@@ -133,6 +142,8 @@ if (options.debug) {
     console.log(`${FILL}debug =`, options.debug);
     console.log(`${FILL}simulate =`, options.simulate);
     console.log(`${FILL}scanMeteor =`, options.scanMeteor);
+    console.log(`${FILL}brakeOnViolations =`, options.brakeOnViolations);
+    console.log(`${FILL}brakeOnWarnings =`, options.brakeOnWarnings);
     console.log(`${FILL}apiKey = |%s|`, options.apiKey);
     console.log(`${FILL}project = |%s|`, options.project);
     console.log(`${FILL}branch = |%s|`, options.branch);
