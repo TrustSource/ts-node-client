@@ -62,23 +62,23 @@ const getOptions = () => {
                 describe: 'Prints a version'
             },
             debug: {
-                default: false,
+                default: null,
                 describe: 'debug'
             },
             simulate: {
-                default: false,
+                default: null,
                 describe: 'simulate'
             },
             meteor: {
-                default: false,
+                default: null,
                 describe: 'meteor'
             },
             brakeOnWarnings: {
-                default: false,
+                default: null,
                 describe: 'brakeOnWarnings'
             },
             brakeOnViolations: {
-                default: false,
+                default: null,
                 describe: 'brakeOnViolations'
             }
         })

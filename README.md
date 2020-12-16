@@ -68,19 +68,21 @@ Options:
   --config, -c    Config path                                        [default: null]
   --proxy         Proxy url like 'http://user:password@host:port'    [default: null]
   --version, -v   Prints a version                                   [default: false]
-  --debug         debug                                              [default: false]
-  --simulate      simulate                                           [default: false]
-  --meteor        meteor                                             [default: false]
-  --brakeOnWarnings                                                  [default: false]
-  --brakeOnViolations                                                [default: false]
+  --debug         debug                                              [default: null]
+  --simulate      simulate                                           [default: null]
+  --meteor        meteor                                             [default: null]
+  --brakeOnWarnings                                                  [default: null]
+  --brakeOnViolations                                                [default: null]
   --help          Prints a usage statement                           [boolean]
 ```
 
 ## Changelog
 
 
-#### 1.2.0
-- Support usage of scan params brakeOnWarnings and brakeOnViolations
+#### 1.2.1
+- Added:
+    - option **--brakeOnViolations**. It is fail build in case any violations after scan transferred.
+    - option **--brakeOnWarnings**. It is fail build in case any warning after scan transferred.
 
 #### 1.1.2
 - userName is not required param for scans
