@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -43,7 +43,7 @@
     "husky": "^4.2.3",
     "mocha": "^6.2.3",
     "nock": "^12.0.3",
-    "ts-node-client": "^1.2.0"
+    "ts-node-client": "^1.2.1"
   },
   "keywords": [
     "node",

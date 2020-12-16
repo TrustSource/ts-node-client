@@ -79,7 +79,7 @@ Options:
 ## Changelog
 
 
-#### 1.2.1
+#### 1.2.2
 - Added:
     - option **--brakeOnViolations**. It is fail build in case any violations after scan transferred.
     - option **--brakeOnWarnings**. It is fail build in case any warning after scan transferred.

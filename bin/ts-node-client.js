@@ -165,9 +165,9 @@ process.on('SIGINT', () => {
     process.exit(1);
 });
 
-process.on('exit', () => {
-    console.log('Exitting normal exitCode=', exitCode);
-    process.exit(exitCode);
+process.on('exit', (code) => {
+    console.log('Exitting normal exitCode=', code || exitCode);
+    process.exit(code || exitCode);
 });
 
 
