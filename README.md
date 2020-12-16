@@ -14,9 +14,9 @@ TrustSource node client
 
 ## Requirements
 
-* node >= 8.12.0
+* node >= 8.9.0
 * debuglog >= 1.0.1
-* npm >= 6.4.0
+* npm >= 6.0.0
 * request >= 2.88.2
 * semver >= 7.1.3
 * yargs >= 15.3.1
@@ -79,7 +79,7 @@ Options:
 ## Changelog
 
 
-#### 1.2.2
+#### 1.2.3
 - Added:
     - option **--brakeOnViolations**. It is fail build in case any violations after scan transferred.
     - option **--brakeOnWarnings**. It is fail build in case any warning after scan transferred.
