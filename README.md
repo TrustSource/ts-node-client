@@ -74,7 +74,7 @@ Options:
 
 ## Changelog
 
-#### 1.3.0
+#### 1.3.1
 - Use [`global-npm`](https://github.com/dracupid/global-npm) (meaning `npm` is no longer a dependency of `ts-node-client`)
 
 #### 1.2.3
