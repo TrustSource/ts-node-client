@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -14,7 +14,8 @@
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 8.9.0"
+    "node": ">= 8.9.0",
+    "npm": ">= 6.0.0"
   },
   "main": "./lib/cli.js",
   "bin": {
@@ -22,7 +23,7 @@
   },
   "scripts": {
     "scan": "node ./bin/ts-node-client.js",
-    "scan-with-brakes": "ts-node-client --brakeOnViolations --brakeOnViolations",
+    "scan-with-brakes": "ts-node-client --brakeOnViolations true --brakeOnWarnings true",
     "scan-prod": "ts-node-client --debug",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
@@ -31,10 +32,10 @@
   },
   "dependencies": {
     "debuglog": "^1.0.1",
-    "npm": ">= 6.0.0",
+    "global-npm": "^0.4.1",
     "request": "^2.88.2",
-    "semver": "^7.1.3",
-    "yargs": "^15.3.1"
+    "semver": "^7.3.4",
+    "yargs": "^15.4.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -43,7 +44,7 @@
     "husky": "^4.2.3",
     "mocha": "^6.2.3",
     "nock": "^12.0.3",
-    "ts-node-client": "^1.2.2"
+    "ts-node-client": "^1.2.3"
   },
   "keywords": [
     "node",

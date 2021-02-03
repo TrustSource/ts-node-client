@@ -15,11 +15,7 @@ TrustSource node client
 ## Requirements
 
 * node >= 8.9.0
-* debuglog >= 1.0.1
 * npm >= 6.0.0
-* request >= 2.88.2
-* semver >= 7.1.3
-* yargs >= 15.3.1
 
 ## Installation
 Run: `npm install --save-dev ts-node-client` or `yarn add --dev ts-node-client`
@@ -78,6 +74,8 @@ Options:
 
 ## Changelog
 
+#### 1.3.0
+- Use [`global-npm`](https://github.com/dracupid/global-npm) (meaning `npm` is no longer a dependency of `ts-node-client`)
 
 #### 1.2.3
 - Added:
