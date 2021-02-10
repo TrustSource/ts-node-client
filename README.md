@@ -64,15 +64,20 @@ Options:
   --config, -c    Config path                                        [default: null]
   --proxy         Proxy url like 'http://user:password@host:port'    [default: null]
   --version, -v   Prints a version                                   [default: false]
-  --debug         debug                                              [default: null]
-  --simulate      simulate                                           [default: null]
-  --meteor        meteor                                             [default: null]
+  --debug                                                            [default: null]
+  --simulate                                                         [default: null]
+  --includeDevDependencies                                           [default: null]
+  --meteor                                                           [default: null]
   --brakeOnWarnings                                                  [default: null]
   --brakeOnViolations                                                [default: null]
   --help          Prints a usage statement                           [boolean]
 ```
 
 ## Changelog
+
+#### 1.4.0
+- Added:
+    - option **--includeDevDependencies**. It is allow to scan dev dependencies
 
 #### 1.3.1
 - Use [`global-npm`](https://github.com/dracupid/global-npm) (meaning `npm` is no longer a dependency of `ts-node-client`)

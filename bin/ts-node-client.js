@@ -80,6 +80,10 @@ const getOptions = () => {
             brakeOnViolations: {
                 default: null,
                 describe: 'brakeOnViolations'
+            },
+            includeDevDependencies: {
+                default: null,
+                describe: 'includeDevDependencies'
             }
         })
         .usage(pckgJson.description)
@@ -95,10 +99,11 @@ const getOptions = () => {
         process.exit(0);
     }
     options = (({
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy, brakeOnWarnings, brakeOnViolations
+        // eslint-disable-next-line max-len
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy, brakeOnWarnings, brakeOnViolations, includeDevDependencies
     }) => ({
         // eslint-disable-next-line max-len
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy, brakeOnWarnings, brakeOnViolations
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy, brakeOnWarnings, brakeOnViolations, includeDevDependencies
     }))(options);
     Object.keys(options).forEach((key) => options[key] === null && delete options[key]);
     return options;
@@ -141,6 +146,7 @@ if (options.debug) {
     console.log('invoking ts-node-client: ');
     console.log(`${FILL}debug =`, options.debug);
     console.log(`${FILL}simulate =`, options.simulate);
+    console.log(`${FILL}includeDevDependencies =`, options.includeDevDependencies);
     console.log(`${FILL}scanMeteor =`, options.scanMeteor);
     console.log(`${FILL}brakeOnViolations =`, options.brakeOnViolations);
     console.log(`${FILL}brakeOnWarnings =`, options.brakeOnWarnings);
