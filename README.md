@@ -75,6 +75,9 @@ Options:
 
 ## Changelog
 
+#### 1.4.1
+- Bump y18n from 4.0.0 to 4.0.1
+
 #### 1.4.0
 - Added:
     - option **--includeDevDependencies**. It is allow to scan dev dependencies
