@@ -75,6 +75,9 @@ Options:
 
 ## Changelog
 
+#### 1.4.2
+- Bump lodash from 4.17.19 to 4.17.21
+
 #### 1.4.1
 - Bump y18n from 4.0.0 to 4.0.1
 
