@@ -75,6 +75,10 @@ Options:
 
 ## Changelog
 
+#### 1.4.3
+- Bump glob-parent from 5.1.1 to 5.1.2
+- Bump path-parse from 1.0.6 to 1.0.7
+
 #### 1.4.2
 - Bump lodash from 4.17.19 to 4.17.21
 
