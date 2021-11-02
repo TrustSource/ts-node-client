@@ -75,6 +75,9 @@ Options:
 
 ## Changelog
 
+#### 1.5.0
+- Bump devDependencies
+
 #### 1.4.3
 - Bump glob-parent from 5.1.1 to 5.1.2
 - Bump path-parse from 1.0.6 to 1.0.7
