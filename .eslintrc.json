@@ -1,8 +1,10 @@
 {
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "plugin:sonarjs/recommended"
     ],
     "plugins": [
+        "sonarjs"
     ],
     "env": {
         "node": true
@@ -20,7 +22,8 @@
         "newline-per-chained-call": [ "off" ],
         "comma-dangle": [ "error", "never" ],
         "linebreak-style": ["off"],
-        "quotes": [ "error", "single" ]
+        "quotes": [ "error", "single" ],
+        "sonarjs/cognitive-complexity": ["error", 40]
     }
 }
 

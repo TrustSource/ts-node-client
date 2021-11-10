@@ -11,6 +11,7 @@ const assert = require('assert');
 const nock = require('nock');
 const { RestClient } = require('../lib/rest-client');
 
+const JSON_TYPE = 'application/json';
 const url = 'http://localhost:3000';
 
 /* eslint-disable no-new */
@@ -44,7 +45,7 @@ describe('RestClient', () => {
         it('should call callback with response data if no error orccurs', (done) => {
             nock(url, {
                 reqheaders: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': JSON_TYPE
                 }
             }).post('/api/v1/scans').reply(201, 'Test response');
 
@@ -58,10 +59,10 @@ describe('RestClient', () => {
         it('response should be parsed as json object, if \'content-type\': \'application/json\'', (done) => {
             nock(url, {
                 reqheaders: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': JSON_TYPE
                 }
             }).defaultReplyHeaders({
-                'Content-Type': 'application/json'
+                'Content-Type': JSON_TYPE
             }).post('/api/v1/scans').reply(201, '{"bli": "blub"}');
 
             restClient.transfer({}, (err, data) => {

@@ -11,9 +11,11 @@
 const assert = require('assert');
 const util = require('util');
 
+const SHOULD_CONTAIN = 'should contain \'name\' and \'message\' fields';
+
 describe('Error object', () => {
     describe('Base object', () => {
-        it('should contain \'name\' and \'message\' fields', () => {
+        it(SHOULD_CONTAIN, () => {
             try {
                 throw new Error('test');
             } catch (err) {
@@ -24,7 +26,7 @@ describe('Error object', () => {
     });
 
     describe('TypeError object', () => {
-        it('should contain \'name\' and \'message\' fields', () => {
+        it(SHOULD_CONTAIN, () => {
             try {
                 throw new TypeError('test');
             } catch (err) {
@@ -44,7 +46,7 @@ describe('Error object', () => {
         MyError.prototype.constructor = MyError;
 
 
-        it('should contain \'name\' and \'message\' fields', () => {
+        it(SHOULD_CONTAIN, () => {
             try {
                 throw new MyError('test');
             } catch (err) {
@@ -64,7 +66,7 @@ describe('Error object', () => {
         }
         util.inherits(MyError, Error); // inherit at least better toString() method
 
-        it('should contain \'name\' and \'message\' fields', () => {
+        it(SHOULD_CONTAIN, () => {
             try {
                 throw new MyError('test');
             } catch (err) {

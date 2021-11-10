@@ -75,8 +75,9 @@ Options:
 
 ## Changelog
 
-#### 1.5.0
+#### 1.5.1
 - Bump devDependencies
+- Introduce sonarjs
 
 #### 1.4.3
 - Bump glob-parent from 5.1.1 to 5.1.2
