@@ -15,7 +15,7 @@ TrustSource node client
 ## Requirements
 
 * node >= 8.9.0
-* npm >= 6.0.0
+* npm < 8.0.0
 
 ## Installation
 Run: `npm install --save-dev ts-node-client` or `yarn add --dev ts-node-client`
@@ -62,7 +62,7 @@ Options:
   --binaryLinks   Binary links separated by comma                    [default: null]
   --url           url                                                [default: null]
   --config, -c    Config path                                        [default: null]
-  --proxy         Proxy url like 'http://user:password@host:port'    [default: null]
+  --proxy         Proxy url like 'https://user:password@host:port'    [default: null]
   --version, -v   Prints a version                                   [default: false]
   --debug                                                            [default: null]
   --simulate                                                         [default: null]
@@ -73,7 +73,15 @@ Options:
   --help          Prints a usage statement                           [boolean]
 ```
 
+## Known problems
+
+####  Error: The programmatic API was removed in npm v8.0.0
+You should upgrade to later versions of ts-node-client
+
 ## Changelog
+
+#### 1.5.2
+- Describe `Error: The programmatic API was removed in npm v8.0.0`
 
 #### 1.5.1
 - Bump devDependencies
@@ -145,11 +153,11 @@ Options:
     - options: **--credentials** and **--credentialsFile** instead you should use **--config**.
     - option **--baseUrl** instead you should use **--url**.
 - Added:
-    - option **--config**. It is similar to credentials but it will contains any config information.
+    - option **--config**. It is similar to credentials, but it will contain any config information.
     - option **--url**. It is similar to baseUrl.
     - option **--apiKey** and **--userName** so it will be unnecessary to create `.tsrc.json` file.
     - options **--version** and **--help**.
-    - options shortcuts.
+    - options shortcut.
 
 ## License
 [Apache-2.0](https://github.com/TrustSource/ts-node-client/blob/master/LICENSE)
