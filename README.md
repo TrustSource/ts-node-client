@@ -14,7 +14,7 @@ TrustSource node client
 ## Requirements
 
 * node >= 8.9.0
-* npm >= 8.0.0 (if you are using < 8.0.0 please switch to version 1.5.2)
+* if you are using npm < 8.0.0 we recommend switch to ts-node-client version  1.5.2 until we provide more elegant solution
 
 ## Installation
 Run: `npm install --save-dev ts-node-client` or `yarn add --dev ts-node-client`
@@ -74,8 +74,10 @@ Options:
 
 ## Changelog
 
-#### 2.0.0
+#### 2.0.0 
+#### if you are using npm < 8.0.0 we recommend switch to ts-node-client version  1.5.2 until we provide more elegant solution
 - Stop usage of [`global-npm`](https://github.com/dracupid/global-npm) until we find new resolution
+- Get back `npm` as local dependency
 
 #### 1.5.2
 - Describe `Error: The programmatic API was removed in npm v8.0.0`
