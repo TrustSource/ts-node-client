@@ -1,6 +1,5 @@
 # TrustSource ts-node-client
 
-[![Travis build status](https://travis-ci.org/TrustSource/ts-node-client.svg?branch=master)](https://travis-ci.org/TrustSource/ts-node-client)
 [![Version](https://img.shields.io/npm/v/ts-node-client.svg)](http://npm.im/ts-node-client)
 [![Downloads](https://img.shields.io/npm/dm/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
 [![Downloads](https://img.shields.io/npm/dt/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
@@ -15,7 +14,7 @@ TrustSource node client
 ## Requirements
 
 * node >= 8.9.0
-* npm < 8.0.0
+* npm >= 8.0.0 (if you are using < 8.0.0 please switch to version 1.5.2)
 
 ## Installation
 Run: `npm install --save-dev ts-node-client` or `yarn add --dev ts-node-client`
@@ -73,12 +72,10 @@ Options:
   --help          Prints a usage statement                           [boolean]
 ```
 
-## Known problems
-
-####  Error: The programmatic API was removed in npm v8.0.0
-You should upgrade to later versions of ts-node-client
-
 ## Changelog
+
+#### 2.0.0
+- Stop usage of [`global-npm`](https://github.com/dracupid/global-npm) until we find new resolution
 
 #### 1.5.2
 - Describe `Error: The programmatic API was removed in npm v8.0.0`
