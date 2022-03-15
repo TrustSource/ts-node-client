@@ -73,13 +73,13 @@ const getOptions = () => {
                 default: null,
                 describe: 'meteor'
             },
-            brakeOnWarnings: {
+            breakOnWarnings: {
                 default: null,
-                describe: 'brakeOnWarnings'
+                describe: 'breakOnWarnings'
             },
-            brakeOnViolations: {
+            breakOnViolations: {
                 default: null,
-                describe: 'brakeOnViolations'
+                describe: 'breakOnViolations'
             },
             includeDevDependencies: {
                 default: null,
@@ -100,10 +100,10 @@ const getOptions = () => {
     }
     options = (({
         // eslint-disable-next-line max-len
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy, brakeOnWarnings, brakeOnViolations, includeDevDependencies
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
     }) => ({
         // eslint-disable-next-line max-len
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy, brakeOnWarnings, brakeOnViolations, includeDevDependencies
+        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
     }))(options);
     Object.keys(options).forEach((key) => options[key] === null && delete options[key]);
     return options;
@@ -148,8 +148,8 @@ if (options.debug) {
     console.log(`${FILL}simulate =`, options.simulate);
     console.log(`${FILL}includeDevDependencies =`, options.includeDevDependencies);
     console.log(`${FILL}scanMeteor =`, options.scanMeteor);
-    console.log(`${FILL}brakeOnViolations =`, options.brakeOnViolations);
-    console.log(`${FILL}brakeOnWarnings =`, options.brakeOnWarnings);
+    console.log(`${FILL}breakOnViolations =`, options.breakOnViolations);
+    console.log(`${FILL}breakOnWarnings =`, options.breakOnWarnings);
     console.log(`${FILL}apiKey = |%s|`, options.apiKey);
     console.log(`${FILL}project = |%s|`, options.project);
     console.log(`${FILL}branch = |%s|`, options.branch);

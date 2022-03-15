@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "scan": "node ./bin/ts-node-client.js",
-    "scan-with-brakes": "ts-node-client --brakeOnViolations true --brakeOnWarnings true",
+    "scan-with-brakes": "ts-node-client --breakOnViolations true --breakOnWarnings true",
     "scan-prod": "ts-node-client --debug",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",

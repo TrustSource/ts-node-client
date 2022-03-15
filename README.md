@@ -68,8 +68,8 @@ Options:
   --simulate                                                         [default: null]
   --includeDevDependencies                                           [default: null]
   --meteor                                                           [default: null]
-  --brakeOnWarnings                                                  [default: null]
-  --brakeOnViolations                                                [default: null]
+  --breakOnWarnings                                                  [default: null]
+  --breakOnViolations                                                [default: null]
   --help          Prints a usage statement                           [boolean]
 ```
 
@@ -79,6 +79,10 @@ Options:
 You should upgrade to later versions of ts-node-client
 
 ## Changelog
+
+#### 1.6.0
+- **--breakOnWarnings** and **--brakeOnViolations**
+- Bump devDependencies
 
 #### 1.5.2
 - Describe `Error: The programmatic API was removed in npm v8.0.0`
