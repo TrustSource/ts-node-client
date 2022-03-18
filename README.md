@@ -68,8 +68,8 @@ Options:
   --simulate                                                         [default: null]
   --includeDevDependencies                                           [default: null]
   --meteor                                                           [default: null]
-  --breakOnWarnings                                                  [default: null]
-  --breakOnViolations                                                [default: null]
+  --breakOnWarnings                                                  [default: false]
+  --breakOnViolations                                                [default: false]
   --help          Prints a usage statement                           [boolean]
 ```
 
@@ -80,12 +80,13 @@ You should upgrade to later versions of ts-node-client
 
 ## Changelog
 
-#### 1.7.0
+#### 1.7.*
 - request -> axios
 - fix dependencies
+- doc fixes
 
 #### 1.6.0
-- **--breakOnWarnings** and **--brakeOnViolations**
+- **--breakOnWarnings** and **--breakOnViolations**
 - Bump devDependencies
 
 #### 1.5.2
