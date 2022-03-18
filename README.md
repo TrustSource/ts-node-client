@@ -80,6 +80,10 @@ You should upgrade to later versions of ts-node-client
 
 ## Changelog
 
+#### 1.7.0
+- request -> axios
+- fix dependencies
+
 #### 1.6.0
 - **--breakOnWarnings** and **--brakeOnViolations**
 - Bump devDependencies
