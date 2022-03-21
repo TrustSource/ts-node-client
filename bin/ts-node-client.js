@@ -61,6 +61,16 @@ const getOptions = () => {
                 default: false,
                 describe: 'Prints a version'
             },
+            saveAs: {
+                alias: 'o',
+                default: null,
+                describe: 'Save as file'
+            },
+            saveAsFormat: {
+                alias: 'of',
+                default: null,
+                describe: 'Save as format'
+            },
             debug: {
                 default: null,
                 describe: 'debug'
@@ -100,10 +110,10 @@ const getOptions = () => {
     }
     options = (({
         // eslint-disable-next-line max-len
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
+        apiKey, project, branch, tag, binaryLinks, config, debug, saveAs, saveAsFormat, simulate, meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
     }) => ({
         // eslint-disable-next-line max-len
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
+        apiKey, project, branch, tag, binaryLinks, config, debug, saveAs, saveAsFormat, simulate, scanMeteor: meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
     }))(options);
     Object.keys(options).forEach((key) => options[key] === null && delete options[key]);
     return options;
@@ -144,19 +154,21 @@ validateOptions(options);
 
 if (options.debug) {
     console.log('invoking ts-node-client: ');
-    console.log(`${FILL}debug =`, options.debug);
-    console.log(`${FILL}simulate =`, options.simulate);
-    console.log(`${FILL}includeDevDependencies =`, options.includeDevDependencies);
-    console.log(`${FILL}scanMeteor =`, options.scanMeteor);
-    console.log(`${FILL}breakOnViolations =`, options.breakOnViolations);
-    console.log(`${FILL}breakOnWarnings =`, options.breakOnWarnings);
-    console.log(`${FILL}apiKey = |%s|`, options.apiKey);
-    console.log(`${FILL}project = |%s|`, options.project);
-    console.log(`${FILL}branch = |%s|`, options.branch);
-    console.log(`${FILL}tag = |%s|`, options.tag);
-    console.log(`${FILL}binaryLinks = |%s|`, options.binaryLinks);
-    console.log(`${FILL}url = |%s|`, options.url);
-    console.log(`${FILL}proxy = |%s|`, options.proxy);
+    console.log(`${FILL}debug = %s`, options.debug);
+    console.log(`${FILL}simulate = %s`, options.simulate);
+    console.log(`${FILL}includeDevDependencies = %s`, options.includeDevDependencies);
+    console.log(`${FILL}scanMeteor = %s`, options.scanMeteor);
+    console.log(`${FILL}saveAs = %s`, options.saveAs);
+    console.log(`${FILL}saveAsFormat = %s`, options.saveAsFormat);
+    console.log(`${FILL}breakOnViolations = %s`, options.breakOnViolations);
+    console.log(`${FILL}breakOnWarnings = %s`, options.breakOnWarnings);
+    console.log(`${FILL}apiKey = %s`, options.apiKey);
+    console.log(`${FILL}project = %s`, options.project);
+    console.log(`${FILL}branch = %s`, options.branch);
+    console.log(`${FILL}tag = %s`, options.tag);
+    console.log(`${FILL}binaryLinks = %s`, options.binaryLinks);
+    console.log(`${FILL}url = %s`, options.url);
+    console.log(`${FILL}proxy = %s`, options.proxy);
 }
 
 let exitCode = 0;
