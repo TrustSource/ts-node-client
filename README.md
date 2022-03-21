@@ -73,12 +73,20 @@ Options:
   --help          Prints a usage statement                           [boolean]
 ```
 
+## Software bill of materials
+
+[View SBOM  <img alt="TrustSource" src="https://app.trustsource.io/logo.png" width="70"/>](https://app.trustsource.io/api/v1/public-BoM/ae0832c6-5a55-4aa8-8c45-75528d0833fb) 
+
+
 ## Known problems
 
 ####  Error: The programmatic API was removed in npm v8.0.0
 You should upgrade to later versions of ts-node-client
 
 ## Changelog
+
+#### 1.8.*
+- SBOM
 
 #### 1.7.*
 - request -> axios
