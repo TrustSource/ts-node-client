@@ -35,7 +35,8 @@
     "debuglog": "1.0.1",
     "global-npm": "0.5.0",
     "semver": "7.3.5",
-    "yargs": "^15.4.1"
+    "yargs": "^15.4.1",
+    "packageurl-js": "github:eacg-gmbh/packageurl-js#v0.1.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
