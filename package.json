@@ -22,7 +22,7 @@
     "ts-node-client": "./bin/ts-node-client.js"
   },
   "scripts": {
-    "scan": "node ./bin/ts-node-client.js --saveAs myfile --saveAsFormat cydx",
+    "scan": "node ./bin/ts-node-client.js",
     "scan-with-brakes": "ts-node-client --breakOnViolations true --breakOnWarnings true",
     "scan-prod": "ts-node-client --debug true",
     "lint": "eslint bin lib test",
