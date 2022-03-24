@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -24,7 +24,7 @@
   "scripts": {
     "scan": "node ./bin/ts-node-client.js",
     "scan-with-brakes": "ts-node-client --breakOnViolations true --breakOnWarnings true",
-    "scan-prod": "ts-node-client --debug",
+    "scan-prod": "ts-node-client --debug true",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
     "test": "mocha test",
@@ -35,7 +35,8 @@
     "debuglog": "1.0.1",
     "global-npm": "0.5.0",
     "semver": "7.3.5",
-    "yargs": "^15.4.1"
+    "yargs": "^15.4.1",
+    "packageurl-js": "github:eacg-gmbh/packageurl-js#v0.1.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
