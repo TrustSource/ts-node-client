@@ -62,14 +62,16 @@ Options:
   --binaryLinks   Binary links separated by comma                    [default: null]
   --url           url                                                [default: null]
   --config, -c    Config path                                        [default: null]
-  --proxy         Proxy url like 'https://user:password@host:port'    [default: null]
+  --proxy         Proxy url like 'https://user:password@host:port'   [default: null]
   --version, -v   Prints a version                                   [default: false]
+  --saveAs, -o              Save as file (file name prefix)          [default: null]
+  --saveAsFormat, --of      Save as format (scan / cydx / spdx)      [default: null]
   --debug                                                            [default: null]
   --simulate                                                         [default: null]
   --includeDevDependencies                                           [default: null]
   --meteor                                                           [default: null]
-  --breakOnWarnings                                                  [default: false]
-  --breakOnViolations                                                [default: false]
+  --breakOnWarnings                                                  [default: null]
+  --breakOnViolations                                                [default: null]
   --help          Prints a usage statement                           [boolean]
 ```
 
@@ -87,6 +89,7 @@ You should upgrade to later versions of ts-node-client
 
 #### 1.8.*
 - SBOM
+- **--saveAs** and **--saveAsFormat**
 
 #### 1.7.*
 - request -> axios

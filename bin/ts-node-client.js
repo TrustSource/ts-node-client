@@ -54,7 +54,7 @@ const getOptions = () => {
             },
             proxy: {
                 default: null,
-                describe: 'Proxy url'
+                describe: 'Proxy url like \'https://user:password@host:port\''
             },
             version: {
                 alias: 'v',
@@ -64,12 +64,12 @@ const getOptions = () => {
             saveAs: {
                 alias: 'o',
                 default: null,
-                describe: 'Save as file'
+                describe: 'Save as file (file name prefix)'
             },
             saveAsFormat: {
                 alias: 'of',
                 default: null,
-                describe: 'Save as format'
+                describe: 'Save as format (scan / cydx / spdx)'
             },
             debug: {
                 default: null,
