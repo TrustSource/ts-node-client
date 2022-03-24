@@ -90,6 +90,7 @@ You should upgrade to later versions of ts-node-client
 #### 1.8.*
 - SBOM
 - **--saveAs** and **--saveAsFormat**
+- Bump minimist from 1.2.5 to 1.2.6
 
 #### 1.7.*
 - request -> axios
