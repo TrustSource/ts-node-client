@@ -91,6 +91,7 @@ You should upgrade to later versions of ts-node-client
 - SBOM
 - **--saveAs** and **--saveAsFormat**
 - Bump minimist from 1.2.5 to 1.2.6
+- Bump urijs from 1.19.10 to 1.19.11
 
 #### 1.7.*
 - request -> axios
