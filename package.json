@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -23,8 +23,9 @@
   },
   "scripts": {
     "scan": "node ./bin/ts-node-client.js",
-    "scan-with-brakes": "ts-node-client --breakOnViolations true --breakOnWarnings true",
-    "scan-prod": "ts-node-client --debug true",
+    "scan-with-brakes": "node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings true",
+    "scan-to-file": "node ./bin/ts-node-client.js --saveAsFormat cydx --saveAs test",
+    "scan-prod": "node ./bin/ts-node-client.js --debug true",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
     "test": "mocha test",
@@ -35,8 +36,7 @@
     "debuglog": "1.0.1",
     "global-npm": "0.5.0",
     "semver": "7.3.5",
-    "yargs": "^15.4.1",
-    "packageurl-js": "github:eacg-gmbh/packageurl-js#v0.1.1"
+    "yargs": "^15.4.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -44,8 +44,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-sonarjs": "^0.10.0",
     "mocha": "^9.2.2",
-    "nock": "^12.0.3",
-    "ts-node-client": "1.8.3"
+    "nock": "^12.0.3"
   },
   "keywords": [
     "node",

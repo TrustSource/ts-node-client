@@ -65,7 +65,7 @@ Options:
   --proxy         Proxy url like 'https://user:password@host:port'   [default: null]
   --version, -v   Prints a version                                   [default: false]
   --saveAs, -o              Save as file (file name prefix)          [default: null]
-  --saveAsFormat, --of      Save as format (scan / cydx / spdx)      [default: null]
+  --saveAsFormat, -of      Save as format (scan / cydx / spdx)       [default: null]
   --debug                                                            [default: null]
   --simulate                                                         [default: null]
   --includeDevDependencies                                           [default: null]
@@ -92,6 +92,7 @@ You should upgrade to later versions of ts-node-client
 - **--saveAs** and **--saveAsFormat**
 - Bump minimist from 1.2.5 to 1.2.6
 - Bump urijs from 1.19.10 to 1.19.11
+- replace packageurl-js with simple local function
 
 #### 1.7.*
 - request -> axios
