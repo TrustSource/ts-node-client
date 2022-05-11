@@ -48,8 +48,8 @@ You also may initiate transfer to TrustSource server manually by executing follo
 
 ```
 node_modules/.bin/ts-node-client
-node_modules/.bin/ts-node-client -k apiKey -p Project
-node_modules/.bin/ts-node-client -c config.json
+node_modules/.bin/ts-node-client -k apiKey -p Project --breakOnWarnings false --breakOnViolations true
+node_modules/.bin/ts-node-client -c config.json 
 ```
 ```
 npm / node module to transfer dependency information to TrustSource server.
@@ -73,7 +73,11 @@ Options:
   --breakOnWarnings                                                  [default: null]
   --breakOnViolations                                                [default: null]
   --help          Prints a usage statement                           [boolean]
+
 ```
+PLEASE NOTE: if you want to pass param into function
+you should add value, for example:
+`--breakOnViolations true` or `--saveAs sbom`
 
 ## Software bill of materials
 
