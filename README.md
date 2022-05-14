@@ -1,6 +1,5 @@
 # TrustSource ts-node-client
 
-[![Travis build status](https://travis-ci.org/TrustSource/ts-node-client.svg?branch=master)](https://travis-ci.org/TrustSource/ts-node-client)
 [![Version](https://img.shields.io/npm/v/ts-node-client.svg)](http://npm.im/ts-node-client)
 [![Downloads](https://img.shields.io/npm/dm/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
 [![Downloads](https://img.shields.io/npm/dt/ts-node-client.svg)](http://npm-stat.com/charts.html?package=ts-node-client)
@@ -61,9 +60,9 @@ Options:
   --url           url                                                [default: null]
   --config, -c    Config path                                        [default: null]
   --proxy         Proxy url like 'https://user:password@host:port'   [default: null]
-  --version, -v   Prints a version                                   [default: false]
+  --version       Prints a version                                   [default: null]
   --saveAs, -o              Save as file (file name prefix)          [default: null]
-  --saveAsFormat, -of      Save as format (scan / cydx / spdx)       [default: null]
+  --saveAsFormat, -f      Save as format (scan / cydx / spdx)       [default: null]
   --debug                                                            [default: null]
   --simulate                                                         [default: null]
   --includeDevDependencies                                           [default: null]
@@ -82,7 +81,6 @@ you should add value, for example:
 
 [View SBOM  <img alt="TrustSource" src="https://app.trustsource.io/logo.png" width="70"/>](https://app.trustsource.io/api/v1/public-BoM/ae0832c6-5a55-4aa8-8c45-75528d0833fb) 
 
-
 ## Known problems
 
 ####  Error: The programmatic API was removed in npm v8.0.0
@@ -90,8 +88,13 @@ You should upgrade to 2.* versions of ts-node-client
 
 ## Changelog
 
-#### 2.0
+#### 2.1.*
+- Migrate 1.6.* - 1.8.* changes to version 2.1
+
+#### 2.0.*
 - Support new scan tool and fix problem with programmatic API for >= npm@8.0.0
+- Stop usage of [`global-npm`](https://github.com/dracupid/global-npm) until we find new resolution
+- Get back `npm` as local dependency
 
 #### 1.8.*
 - SBOM

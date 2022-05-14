@@ -56,18 +56,13 @@ const getOptions = () => {
                 default: null,
                 describe: 'Proxy url like \'https://user:password@host:port\''
             },
-            version: {
-                alias: 'v',
-                default: false,
-                describe: 'Prints a version'
-            },
             saveAs: {
                 alias: 'o',
                 default: null,
                 describe: 'Save as file (file name prefix)'
             },
             saveAsFormat: {
-                alias: 'of',
+                alias: 'f',
                 default: null,
                 describe: 'Save as format (scan / cydx / spdx)'
             },
@@ -96,6 +91,7 @@ const getOptions = () => {
                 describe: 'includeDevDependencies'
             }
         })
+        .version()
         .usage(pckgJson.description)
         .help('help', 'Prints a usage statement')
         .fail((msg, err, yargsObject) => {

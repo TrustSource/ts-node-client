@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "1.8.7",
+  "version": "2.1.0",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -14,8 +14,7 @@
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 8.9.0",
-    "npm": "< 8.0.0"
+    "node": ">= 8.9.0"
   },
   "main": "./lib/cli.js",
   "bin": {
@@ -23,20 +22,19 @@
   },
   "scripts": {
     "scan": "node ./bin/ts-node-client.js",
-    "scan-with-brakes": "node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings true",
-    "scan-to-file": "node ./bin/ts-node-client.js --saveAsFormat cydx --saveAs test",
-    "scan-prod": "node ./bin/ts-node-client.js --debug true",
+    "scan-with-brakes": "node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings false",
+    "scan-to-file": "node ./bin/ts-node-client.js --saveAs test --saveAsFormat cydx",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
     "test": "mocha test",
     "precommit": "npm run lint && npm run test"
   },
   "dependencies": {
+    "npm": "6.14.17",
     "axios": "0.26.1",
     "debuglog": "1.0.1",
-    "global-npm": "0.5.0",
     "semver": "7.3.5",
-    "yargs": "^15.4.1"
+    "yargs": "^17.5.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -52,6 +50,8 @@
     "meteor",
     "plugin",
     "opensource",
+    "cydx",
+    "spdx",
     "dependency-analysis"
   ]
 }
