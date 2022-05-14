@@ -79,3 +79,5 @@ crashlytics-build.properties
 fabric.properties
 
 .tsrc.json
+.tsrc.dev.json
+.tsrc.prod.json

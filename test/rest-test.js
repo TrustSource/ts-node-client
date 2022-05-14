@@ -39,10 +39,10 @@ describe('RestClient', () => {
         let restClient;
 
         beforeEach(() => {
-            restClient = new RestClient({ url: 'http://localhost:3000' });
+            restClient = new RestClient({ url: 'http://localhost:3000', apiKey: 'test' });
         });
 
-        it('should call callback with response data if no error orccurs', (done) => {
+        it('should call callback with response data if no error occurs', (done) => {
             nock(url, {
                 reqheaders: {
                     'Content-Type': JSON_TYPE

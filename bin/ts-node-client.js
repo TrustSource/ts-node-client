@@ -54,12 +54,17 @@ const getOptions = () => {
             },
             proxy: {
                 default: null,
-                describe: 'Proxy url'
+                describe: 'Proxy url like \'https://user:password@host:port\''
             },
-            version: {
-                alias: 'v',
-                default: false,
-                describe: 'Prints a version'
+            saveAs: {
+                alias: 'o',
+                default: null,
+                describe: 'Save as file (file name prefix)'
+            },
+            saveAsFormat: {
+                alias: 'f',
+                default: null,
+                describe: 'Save as format (scan / cydx / spdx)'
             },
             debug: {
                 default: null,
@@ -73,19 +78,20 @@ const getOptions = () => {
                 default: null,
                 describe: 'meteor'
             },
-            brakeOnWarnings: {
+            breakOnWarnings: {
                 default: null,
-                describe: 'brakeOnWarnings'
+                describe: 'breakOnWarnings'
             },
-            brakeOnViolations: {
+            breakOnViolations: {
                 default: null,
-                describe: 'brakeOnViolations'
+                describe: 'breakOnViolations'
             },
             includeDevDependencies: {
                 default: null,
                 describe: 'includeDevDependencies'
             }
         })
+        .version()
         .usage(pckgJson.description)
         .help('help', 'Prints a usage statement')
         .fail((msg, err, yargsObject) => {
@@ -100,10 +106,10 @@ const getOptions = () => {
     }
     options = (({
         // eslint-disable-next-line max-len
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, meteor, url, proxy, brakeOnWarnings, brakeOnViolations, includeDevDependencies
+        apiKey, project, branch, tag, binaryLinks, config, debug, saveAs, saveAsFormat, simulate, meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
     }) => ({
         // eslint-disable-next-line max-len
-        apiKey, project, branch, tag, binaryLinks, config, debug, simulate, scanMeteor: meteor, url, proxy, brakeOnWarnings, brakeOnViolations, includeDevDependencies
+        apiKey, project, branch, tag, binaryLinks, config, debug, saveAs, saveAsFormat, simulate, scanMeteor: meteor, url, proxy, breakOnWarnings, breakOnViolations, includeDevDependencies
     }))(options);
     Object.keys(options).forEach((key) => options[key] === null && delete options[key]);
     return options;
@@ -144,19 +150,21 @@ validateOptions(options);
 
 if (options.debug) {
     console.log('invoking ts-node-client: ');
-    console.log(`${FILL}debug =`, options.debug);
-    console.log(`${FILL}simulate =`, options.simulate);
-    console.log(`${FILL}includeDevDependencies =`, options.includeDevDependencies);
-    console.log(`${FILL}scanMeteor =`, options.scanMeteor);
-    console.log(`${FILL}brakeOnViolations =`, options.brakeOnViolations);
-    console.log(`${FILL}brakeOnWarnings =`, options.brakeOnWarnings);
-    console.log(`${FILL}apiKey = |%s|`, options.apiKey);
-    console.log(`${FILL}project = |%s|`, options.project);
-    console.log(`${FILL}branch = |%s|`, options.branch);
-    console.log(`${FILL}tag = |%s|`, options.tag);
-    console.log(`${FILL}binaryLinks = |%s|`, options.binaryLinks);
-    console.log(`${FILL}url = |%s|`, options.url);
-    console.log(`${FILL}proxy = |%s|`, options.proxy);
+    console.log(`${FILL}debug = %s`, options.debug);
+    console.log(`${FILL}simulate = %s`, options.simulate);
+    console.log(`${FILL}includeDevDependencies = %s`, options.includeDevDependencies);
+    console.log(`${FILL}scanMeteor = %s`, options.scanMeteor);
+    console.log(`${FILL}saveAs = %s`, options.saveAs);
+    console.log(`${FILL}saveAsFormat = %s`, options.saveAsFormat);
+    console.log(`${FILL}breakOnViolations = %s`, options.breakOnViolations);
+    console.log(`${FILL}breakOnWarnings = %s`, options.breakOnWarnings);
+    console.log(`${FILL}apiKey = %s`, options.apiKey);
+    console.log(`${FILL}project = %s`, options.project);
+    console.log(`${FILL}branch = %s`, options.branch);
+    console.log(`${FILL}tag = %s`, options.tag);
+    console.log(`${FILL}binaryLinks = %s`, options.binaryLinks);
+    console.log(`${FILL}url = %s`, options.url);
+    console.log(`${FILL}proxy = %s`, options.proxy);
 }
 
 let exitCode = 0;
