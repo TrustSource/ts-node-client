@@ -22,9 +22,8 @@
   },
   "scripts": {
     "scan": "node ./bin/ts-node-client.js",
-    "scan-with-brakes": "node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings true",
-    "scan-to-file": "node ./bin/ts-node-client.js --saveAsFormat cydx --saveAs test",
-    "scan-prod": "node ./bin/ts-node-client.js --debug true",
+    "scan-with-brakes": "node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings false",
+    "scan-to-file": "node ./bin/ts-node-client.js --saveAs test --saveAsFormat cydx",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
     "test": "mocha test",
@@ -51,6 +50,8 @@
     "meteor",
     "plugin",
     "opensource",
+    "cydx",
+    "spdx",
     "dependency-analysis"
   ]
 }
