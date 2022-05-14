@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": false,
   "homepage": "https://app.trustsource.io/",
   "author": {
@@ -37,10 +37,10 @@
     "yargs": "^17.5.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-sonarjs": "^0.10.0",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-sonarjs": "^0.13.0",
     "mocha": "^9.2.2",
     "nock": "^12.0.3"
   },

@@ -36,18 +36,24 @@ describe('Dependency', () => {
         it('should set license as object', () => {
             assert.deepEqual(new Dependency('---', '---', '---', '', true, 'MIT').licenses[0], { name: 'MIT' });
             assert.deepEqual(new Dependency('---', '---', '---', '', true, { type: 'MIT' }).licenses[0], { name: 'MIT' });
-            assert.deepEqual(new Dependency('---', '---', '---', '', true, { type: 'MIT', url: 'https://test' }).licenses[0],
-                { name: 'MIT', url: 'https://test' });
+            assert.deepEqual(
+                new Dependency('---', '---', '---', '', true, { type: 'MIT', url: 'https://test' }).licenses[0],
+                { name: 'MIT', url: 'https://test' }
+            );
         });
 
         it('should set license as array', () => {
-            assert.deepEqual(new Dependency('---', '---', '---', '', true, ['MIT', 'Apache']).licenses,
-                [{ name: 'MIT' }, { name: 'Apache' }]);
+            assert.deepEqual(
+                new Dependency('---', '---', '---', '', true, ['MIT', 'Apache']).licenses,
+                [{ name: 'MIT' }, { name: 'Apache' }]
+            );
         });
 
         it('should set license as array of objects', () => {
-            assert.deepEqual(new Dependency('---', '---', '---', '', true, [{ type: 'MIT', url: 'url' }, { type: 'Apache' }]).licenses,
-                [{ name: 'MIT', url: 'url' }, { name: 'Apache' }]);
+            assert.deepEqual(
+                new Dependency('---', '---', '---', '', true, [{ type: 'MIT', url: 'url' }, { type: 'Apache' }]).licenses,
+                [{ name: 'MIT', url: 'url' }, { name: 'Apache' }]
+            );
         });
 
         it('should not accept empty or invalid name', () => {
@@ -142,12 +148,32 @@ describe('Dependency', () => {
         });
 
         it('should extract additional repo-protocol from url', () => {
-            assert.deepEqual(new Dependency('name', 'version', '---', 'description', '---', '---', 'home',
-                'git+https://github.com/eacg-gmbh/ecs-grunt-plugin.git').repoUrl,
-            'https://github.com/eacg-gmbh/ecs-grunt-plugin.git');
-            assert.deepEqual(new Dependency('name', 'version', '---', 'description', '---', '---', 'home',
-                'svn+http://svnrepo.com/test.svn').repoUrl,
-            'http://svnrepo.com/test.svn');
+            assert.deepEqual(
+                new Dependency(
+                    'name',
+                    'version',
+                    '---',
+                    'description',
+                    '---',
+                    '---',
+                    'home',
+                    'git+https://github.com/eacg-gmbh/ecs-grunt-plugin.git'
+                ).repoUrl,
+                'https://github.com/eacg-gmbh/ecs-grunt-plugin.git'
+            );
+            assert.deepEqual(
+                new Dependency(
+                    'name',
+                    'version',
+                    '---',
+                    'description',
+                    '---',
+                    '---',
+                    'home',
+                    'svn+http://svnrepo.com/test.svn'
+                ).repoUrl,
+                'http://svnrepo.com/test.svn'
+            );
         });
 
 
