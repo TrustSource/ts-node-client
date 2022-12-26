@@ -90,6 +90,7 @@ You should upgrade to 2.* versions of ts-node-client
 
 #### 2.1.*
 - Migrate 1.6.* - 1.8.* changes to version 2.1
+- Bump dependencies
 
 #### 2.0.*
 - Support new scan tool and fix problem with programmatic API for >= npm@8.0.0
