@@ -9,6 +9,12 @@
 
 > TrustSource node client - node module to transfer dependency information to TrustSource server.
 
+## Release 3.0.0
+Package now is not including `npm`. This was done due to missing programmatic API in npm >= 8.0.0 and in order to skip deprecated dependencies
+
+This change affects structure of scans, but improve tool.
+
+
 ## Requirements
 * node >= 8.9.0
 * npm < 8.0.0 use **ts-node-client@1.***
@@ -86,7 +92,14 @@ you should add value, for example:
 ####  Error: The programmatic API was removed in npm v8.0.0
 You should upgrade to 2.* versions of ts-node-client
 
-## Changelog
+## Changelog available inside `CHANGELOG.md`
+
+## [DEPRECATED] Changelog 
+
+#### 3.0.*
+- `npm.ls` cli -> `package-lock.json` parse
+- npm removed
+- updated dependencies
 
 #### 2.1.*
 - Migrate 1.6.* - 1.8.* changes to version 2.1
