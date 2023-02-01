@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 3.0.0 - 2023-01-09
 
 ### Changed
-* `npm.ls` cli -> `package-lock.json` parse
+* `npm.ls` cli -> `package-lock.json` or `package.json` parse
 * npm removed
 * updated dependencies
 
