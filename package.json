@@ -30,6 +30,7 @@
     "precommit": "npm run lint && npm run test"
   },
   "dependencies": {
+    "@yarnpkg/lockfile": "^1.1.0",
     "axios": "1.2.6",
     "debuglog": "1.0.1",
     "semver": "7.3.8",
