@@ -10,10 +10,9 @@
 > TrustSource node client - node module to transfer dependency information to TrustSource server.
 
 ## Release 3.0.0
-Package now is not including `npm`. This was done due to missing programmatic API in npm >= 8.0.0 and in order to skip deprecated dependencies
+Package now is not including `npm` anymore. The addition has been done due to missing programmatic API in npm >= 8.0.0 and in order to skip deprecated dependencies
 
-This change affects structure of scans, but improve tool.
-
+This change affects the structure of scans slightly, but it heavily improves the scanner.
 
 ## Requirements
 * node >= 8.9.0
