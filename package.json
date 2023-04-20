@@ -1,8 +1,8 @@
 {
   "name": "ts-node-client",
+  "packageManager": "yarn@3.5.0",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "3.0.1",
-  "private": false,
+  "version": "3.1.0",
   "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Gerhard Dickescheid",
@@ -14,16 +14,14 @@
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 8.9.0"
+    "node": ">= 12.0.0"
   },
   "main": "./lib/cli.js",
-  "bin": {
-    "ts-node-client": "./bin/ts-node-client.js"
-  },
+  "bin": "./bin/ts-node-client.js",
   "scripts": {
-    "scan": "node ./bin/ts-node-client.js --debug true",
-    "scan-with-brakes": "node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings false",
-    "scan-to-file": "node ./bin/ts-node-client.js --saveAs test --saveAsFormat scan",
+    "scan": "yarn node ./bin/ts-node-client.js --debug true --saveAs test --saveAsFormat scan",
+    "scan-with-brakes": "yarn node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings false",
+    "scan-to-file": "yarn node ./bin/ts-node-client.js --saveAs test --saveAsFormat scan",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
     "test": "mocha test",
@@ -33,8 +31,9 @@
     "@yarnpkg/lockfile": "^1.1.0",
     "axios": "1.2.6",
     "debuglog": "1.0.1",
+    "js-yaml": "^4.1.0",
     "semver": "7.3.8",
-    "yargs": "17.6.2"
+    "yargs": "17.7.1"
   },
   "devDependencies": {
     "eslint": "8.33.0",

@@ -9,12 +9,18 @@
 
 > TrustSource node client - node module to transfer dependency information to TrustSource server.
 
+## Release 3.1.0
+Package now support yarn v.2+
+
 ## Release 3.0.0
 Package now is not including `npm` anymore. The addition has been done due to missing programmatic API in npm >= 8.0.0 and in order to skip deprecated dependencies
 
 This change affects the structure of scans slightly, but it heavily improves the scanner.
 
 ## Requirements
+* node >= 12.0.0 use **ts-node-client@3.1.+***
+
+## Older versions
 * node >= 8.9.0
 * npm < 8.0.0 use **ts-node-client@1.***
 * npm >= 8.0.0 use **ts-node-client@2.***
