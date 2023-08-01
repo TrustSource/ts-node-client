@@ -8,11 +8,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## 3.2.0 - 2023-08-01
+
+### Added
+* support package-lock.json v.3
+
+### Changed
+* bump dependencies
+
+
 ## 3.1.0 - 2023-04-20
 
 ### Added
 * support for yarn v2+ lock files
-
+  
 ### Changed
 * project migrated to yarn 3.5
 

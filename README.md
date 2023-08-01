@@ -9,6 +9,9 @@
 
 > TrustSource node client - node module to transfer dependency information to TrustSource server.
 
+## Release 3.2.0
+Package now support package-lock.json v.3
+
 ## Release 3.1.0
 Package now support yarn v.2+
 
