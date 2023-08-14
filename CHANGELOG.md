@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 3.2.1 - 2023-08-14
 
 ### Fixed
-* --includeDevDependencies false now properly disable devDependencies
+* --includeDevDependencies false now properly disables devDependencies
 
 
 ## 3.2.0 - 2023-08-01
