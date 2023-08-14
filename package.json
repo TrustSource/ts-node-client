@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Oleksandr Dmukhovskyi",
@@ -20,7 +20,7 @@
   "scripts": {
     "scan": "yarn node ./bin/ts-node-client.js --debug true --saveAs test --saveAsFormat scan",
     "scan-with-brakes": "yarn node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings false",
-    "scan-to-file": "yarn node ./bin/ts-node-client.js --saveAs test --saveAsFormat scan",
+    "scan-to-file": "yarn node ./bin/ts-node-client.js --saveAs test --saveAsFormat scan --includeDevDependencies false",
     "lint": "eslint bin lib test",
     "lint-fix": "eslint bin lib test --fix",
     "test": "mocha test",

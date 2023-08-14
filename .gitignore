@@ -79,6 +79,7 @@ crashlytics-build.properties
 fabric.properties
 
 .tsrc.json
+.tsrc.local.json
 .tsrc.dev.json
 .tsrc.prod.json
 /.yarn/
