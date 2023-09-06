@@ -8,7 +8,7 @@ on: [push, pull_request]
 jobs:
   publish:
 
-    if: github.ref == 'refs/heads/npm_publish'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     strategy:
