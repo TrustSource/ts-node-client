@@ -1,4 +1,4 @@
-name: Scan dependencies
+name: Scan and upload to trustsource.io
 
 on:
   push:
@@ -22,8 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
-      - name: Install yarn
-        run: npm install --global yarn
       - name: Install dependencies
         run: yarn
       - name: Scan dependencies
