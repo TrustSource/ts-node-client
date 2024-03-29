@@ -1,0 +1,36 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Scan dependencies
+
+on: [push, pull_request]
+
+jobs:
+  publish:
+
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - node-version: 16.x
+
+    steps:
+      - name: GitHub Tag Name example
+        run: |
+          echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+          echo "Branch name from GITHUB_BRANCH_NAME: $GITHUB_BRANCH_NAME"
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install yarn
+        run: npm install --global yarn
+      - name: Install dependencies
+        run: yarn
+      - name: Scan dependencies
+        run: yarn node ./bin/ts-node-client.js --debug true --branch $GITHUB_BRANCH_NAME --tag $GITHUB_REF_NAME --project Scanner --url https://app.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
+
