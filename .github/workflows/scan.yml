@@ -3,12 +3,14 @@
 
 name: Scan dependencies
 
-on: [push, pull_request]
+on:
+  push:
+    tags:
+      - '*.*.*'
 
 jobs:
-  publish:
+  scan:
 
-    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
 
     strategy:
@@ -32,5 +34,5 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Scan dependencies
-        run: yarn node ./bin/ts-node-client.js --debug true --branch $GITHUB_BRANCH_NAME --tag $GITHUB_REF_NAME --project Scanner --url https://app.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
+        run: yarn node ./bin/ts-node-client.js --debug true --branch $GITHUB_REF_NAME --tag $GITHUB_REF_NAME --project Scanner --url https://app.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
 
