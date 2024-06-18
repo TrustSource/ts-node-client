@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "3.3.3",
+  "version": "3.4.0",
   "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Oleksandr Dmukhovskyi",
@@ -28,11 +28,11 @@
   },
   "dependencies": {
     "@yarnpkg/lockfile": "1.1.0",
-    "axios": "1.6.8",
+    "axios": "1.7.2",
     "debuglog": "1.0.1",
     "js-yaml": "4.1.0",
     "packageurl-js": "1.2.1",
-    "semver": "7.6.0",
+    "semver": "7.6.2",
     "yargs": "17.7.2"
   },
   "devDependencies": {

@@ -11,7 +11,7 @@ const fs = require('fs');
 const yargs = require('yargs');
 const pckgJson = require('../package.json');
 
-const URL = 'https://app.trustsource.io';
+const URL = 'https://api.trustsource.io';
 const CRED_FILENAME = '/.tsrc.json';
 const FILL = '                      ';
 const execute = require('../lib/cli');

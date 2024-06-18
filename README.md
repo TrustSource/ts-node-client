@@ -9,6 +9,9 @@
 
 > TrustSource node client - node module to transfer dependency information to TrustSource server.
 
+## Release 3.4.0
+Migrated to TrustSource API v2
+
 ## Release 3.2.0
 Package now support package-lock.json v.3
 
@@ -46,7 +49,7 @@ To store your credentials for automated transfer you may create `.tsrc.json` in 
 ```
 {
   "apiKey": "apiKey",
-  "url": "https://app.trustsource.io",
+  "url": "https://api.trustsource.io",
   "project": "Project Description"
 }
 

@@ -47,7 +47,7 @@ describe('RestClient', () => {
                 reqheaders: {
                     'Content-Type': JSON_TYPE
                 }
-            }).post('/api/v1/scans').reply(201, 'Test response');
+            }).post('/v2/core/scans').reply(201, 'Test response');
 
             restClient.transfer({}, (err, data) => {
                 assert.equal(err, null);
@@ -63,7 +63,7 @@ describe('RestClient', () => {
                 }
             }).defaultReplyHeaders({
                 'Content-Type': JSON_TYPE
-            }).post('/api/v1/scans').reply(201, '{"bli": "blub"}');
+            }).post('/v2/core/scans').reply(201, '{"bli": "blub"}');
 
             restClient.transfer({}, (err, data) => {
                 assert.equal(err, null);
