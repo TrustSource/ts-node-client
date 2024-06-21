@@ -25,5 +25,5 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Scan dependencies
-        run: yarn node ./bin/ts-node-client.js --branch main --tag $GITHUB_REF_NAME --project Scanner --url https://app.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
+        run: yarn node ./bin/ts-node-client.js --branch main --tag $GITHUB_REF_NAME --project Scanner --url https://api.trustsource.io/ --apiKey ${{ secrets.TS_TOKEN }}
 
