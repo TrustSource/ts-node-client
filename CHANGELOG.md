@@ -8,6 +8,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## 3.4.1 - 2024-08-13
+
+### Fixed
+* axios 1.7.2 allows SSRF via unexpected behavior where requests for path relative URLs get processed as protocol relative URLs.
+
+### Changed
+* update to cyclonedx version 1.6
+
+
 ## 3.4.0 - 2024-06-18
 
 ### Changed
