@@ -10,7 +10,9 @@
 > TrustSource node client - node module to transfer dependency information to TrustSource server.
 
 ## Release 3.4.0
-Migrated to TrustSource API v2
+Migrated to TrustSource API v2. Please ensure your `url` is updated to `https://api.trustsource.io`. 
+
+> PLEASE NOTE: API v1 is meanwhile deprecated. We plan to seize its functionality in September 30th, 2024. Starting from June, users of APIv1 will receive a deprecation notice. If you feel that this timeframe is too tough for you, please reach out to your engagement manager as soon as possible to clarify further proceedings.
 
 ## Release 3.2.0
 Package now support package-lock.json v.3
