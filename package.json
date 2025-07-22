@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Oleksandr Dmukhovskyi",
@@ -18,7 +18,7 @@
   "main": "./lib/cli.js",
   "bin": "./bin/ts-node-client.js",
   "scripts": {
-    "scan": "yarn node ./bin/ts-node-client.js",
+    "scan": "yarn node ./bin/ts-node-client.js --debug true",
     "scan-with-brakes": "yarn node ./bin/ts-node-client.js --breakOnViolations true --breakOnWarnings false",
     "scan-to-file": "yarn node ./bin/ts-node-client.js --saveAs test --saveAsFormat scan --includeDevDependencies false",
     "lint": "eslint bin lib test",
@@ -28,20 +28,20 @@
   },
   "dependencies": {
     "@yarnpkg/lockfile": "1.1.0",
-    "axios": "1.7.4",
+    "axios": "1.10.0",
     "debuglog": "1.0.1",
     "js-yaml": "4.1.0",
     "packageurl-js": "1.2.1",
-    "semver": "7.6.3",
+    "semver": "7.7.2",
     "yargs": "17.7.2"
   },
   "devDependencies": {
     "eslint": "8.57.0",
     "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-import": "2.32.0",
     "eslint-plugin-sonarjs": "0.25.1",
-    "mocha": "10.7.3",
-    "nock": "13.5.4"
+    "mocha": "10.8.2",
+    "nock": "13.5.6"
   },
   "keywords": [
     "node",
@@ -52,5 +52,6 @@
     "cydx",
     "spdx",
     "dependency-analysis"
-  ]
+  ],
+  "packageManager": "yarn@3.5.0+sha512.2dc70be5fce9f66756d25b00a888f3ca66f86b502b76750e72ba54cec89da767b938c54124595e26f868825688e0fe3552c26c76a330673343057acadd5cfcf2"
 }
