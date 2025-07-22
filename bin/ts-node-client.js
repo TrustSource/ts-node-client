@@ -164,6 +164,7 @@ if (options.debug) {
     console.log(`${FILL}tag = %s`, options.tag);
     console.log(`${FILL}binaryLinks = %s`, options.binaryLinks);
     console.log(`${FILL}url = %s`, options.url);
+    console.log(`${FILL}fullUrl = %s`, options.fullUrl);
     console.log(`${FILL}proxy = %s`, options.proxy);
 }
 
