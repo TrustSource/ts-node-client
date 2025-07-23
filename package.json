@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@yarnpkg/lockfile": "1.1.0",
-    "axios": "1.10.0",
+    "axios": "1.11.0",
     "debuglog": "1.0.1",
     "js-yaml": "4.1.0",
     "packageurl-js": "1.2.1",
