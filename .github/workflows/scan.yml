@@ -3,7 +3,7 @@ name: Scan and upload to trustsource.io
 on:
   push:
     tags:
-      - '*.*.*'
+      - 'main'
 
 jobs:
   scan:
