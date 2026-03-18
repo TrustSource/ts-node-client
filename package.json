@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "3.4.9",
+  "version": "3.4.10",
   "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Oleksandr Dmukhovskyi",
@@ -53,5 +53,8 @@
     "spdx",
     "dependency-analysis"
   ],
+  "resolutions": {
+    "serialize-javascript": ">=7.0.3"
+  },
   "packageManager": "yarn@1.22.22"
 }

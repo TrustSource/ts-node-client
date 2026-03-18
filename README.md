@@ -99,7 +99,7 @@ you should add value, for example:
 
 ## Software bill of materials
 
-[View SBOM  <img alt="TrustSource" src="https://app.trustsource.io/logo.png" width="70"/>](https://app.trustsource.io/api/v1/public-BoM/ae0832c6-5a55-4aa8-8c45-75528d0833fb) 
+[View SBOM  <img alt="TrustSource" src="https://app.trustsource.io/logo.png" width="70"/>](sbom.pdf) 
 
 ## Known problems
 
