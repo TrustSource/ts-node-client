@@ -5,7 +5,7 @@
 | Version | Supported          |
 |---------| ------------------ |
 | 3.4.x   | :white_check_mark: |
-| < 3.0   | :x:                |
+| < 3.4   | :x:                |
 
 ## Contact information
 Contact: mailto:support@trustsource.io
@@ -24,7 +24,7 @@ Acknowledgments: https://www.trustsource.io/hall-of-fame
 Preferred-Languages: en, de
 
 ## Self reference
-Canonical: https://raw.githubusercontent.com/TrustSource/ts-node-client/refs/heads/main/SECURITY.txt
+Canonical: https://raw.githubusercontent.com/TrustSource/ts-node-client/refs/heads/main/SECURITY.md
 
 ## Our security policy
 Policy: https://www.trustsource.io/security-policy
