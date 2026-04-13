@@ -83,3 +83,4 @@ fabric.properties
 .tsrc.dev.json
 .tsrc.prod.json
 /.yarn/
+.claude/

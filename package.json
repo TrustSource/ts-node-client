@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "3.4.10",
+  "version": "3.4.11",
   "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Oleksandr Dmukhovskyi",
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@yarnpkg/lockfile": "1.1.0",
-    "axios": "1.13.5",
+    "axios": "1.15.0",
     "debuglog": "1.0.1",
     "js-yaml": "4.1.1",
     "packageurl-js": "1.2.1",
@@ -36,11 +36,12 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "eslint": "8.57.1",
-    "eslint-config-airbnb-base": "15.0.0",
+    "@eslint/js": "9.39.4",
+    "eslint": "9.39.4",
     "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-sonarjs": "0.25.1",
-    "mocha": "10.8.2",
+    "eslint-plugin-sonarjs": "4.0.2",
+    "globals": "17.5.0",
+    "mocha": "11.7.5",
     "nock": "13.5.6"
   },
   "keywords": [
@@ -54,7 +55,12 @@
     "dependency-analysis"
   ],
   "resolutions": {
-    "serialize-javascript": ">=7.0.3"
+    "serialize-javascript": ">=7.0.3",
+    "diff": "^8.0.3"
+  },
+  "overrides": {
+    "serialize-javascript": ">=7.0.3",
+    "diff": "^8.0.3"
   },
   "packageManager": "yarn@1.22.22"
 }

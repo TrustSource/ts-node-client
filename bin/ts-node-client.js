@@ -127,7 +127,7 @@ const loadConfig = (options) => {
         } else if (fs.existsSync(value) && fs.lstatSync(value).isFile()) {
             result = value;
         }
-        return !result || result.match(/^([a-zA-Z]:)?(\/|\\)/) ? result : `../../../${result}`;
+        return !result || result.match(/^([a-zA-Z]:)?[/\\]/) ? result : `../../../${result}`;
     }).filter((value) => value);
     /* eslint-disable global-require, import/no-dynamic-require */
     return values[0] ? require(values[0]) : {};

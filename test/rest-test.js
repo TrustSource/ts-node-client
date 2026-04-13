@@ -18,14 +18,10 @@ const url = 'http://localhost:3000';
 describe('RestClient', () => {
     describe('Constructor', () => {
         it('should throw Error if no options defined', () => {
-            assert.throws(() => {
-                new RestClient();
-            }, TypeError);
+            assert.throws(() => new RestClient(), TypeError);
         });
         it('should throw Error if no url attribute defined', () => {
-            assert.throws(() => {
-                new RestClient({});
-            }, TypeError);
+            assert.throws(() => new RestClient({}), TypeError);
         });
         it('should accept url attribute', () => {
             assert.doesNotThrow(() => {
