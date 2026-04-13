@@ -57,27 +57,13 @@ describe('Dependency', () => {
         });
 
         it('should not accept empty or invalid name', () => {
-            assert.throws(() => {
-                new Dependency();
-            }, Error);
-            assert.throws(() => {
-                new Dependency(undefined);
-            }, Error);
-            assert.throws(() => {
-                new Dependency(null);
-            }, Error);
-            assert.throws(() => {
-                new Dependency('');
-            }, Error);
-            assert.throws(() => {
-                new Dependency(new String());
-            }, Error);
-            assert.throws(() => {
-                new Dependency(new String(''));
-            }, Error);
-            assert.throws(() => {
-                new Dependency(1234);
-            }, Error);
+            assert.throws(() => new Dependency(), Error);
+            assert.throws(() => new Dependency(undefined), Error);
+            assert.throws(() => new Dependency(null), Error);
+            assert.throws(() => new Dependency(''), Error);
+            assert.throws(() => new Dependency(Object('')), Error);
+            assert.throws(() => new Dependency(Object('')), Error);
+            assert.throws(() => new Dependency(1234), Error);
         });
 
         it('should accept literal or String object as name', () => {
@@ -85,66 +71,38 @@ describe('Dependency', () => {
                 assert.equal(new Dependency('name', '---', '---').name, 'name');
             }, Error);
             assert.doesNotThrow(() => {
-                assert.equal(new Dependency(new String('name'), '---', '---').name, 'name');
+                assert.equal(new Dependency(Object('name'), '---', '---').name, 'name');
             }, Error);
         });
 
         it('should not accept empty or invalid version', () => {
-            assert.throws(() => {
-                new Dependency('name');
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', undefined);
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', null);
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', '');
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', new String());
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', new String(''));
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', new Date());
-            }, Error);
+            assert.throws(() => new Dependency('name'), Error);
+            assert.throws(() => new Dependency('name', undefined), Error);
+            assert.throws(() => new Dependency('name', null), Error);
+            assert.throws(() => new Dependency('name', ''), Error);
+            assert.throws(() => new Dependency('name', Object('')), Error);
+            assert.throws(() => new Dependency('name', Object('')), Error);
+            assert.throws(() => new Dependency('name', new Date()), Error);
         });
 
         it('should accept literal or String object as version', () => {
             assert.deepEqual(new Dependency('----', 'version', '---').versions, ['version']);
-            assert.deepEqual(new Dependency('---', new String('version'), '---').versions, ['version']);
+            assert.deepEqual(new Dependency('---', Object('version'), '---').versions, ['version']);
         });
 
         it('should not accept empty or invalid key-prefix', () => {
-            assert.throws(() => {
-                new Dependency('name', 'version');
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', 'version', undefined);
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', 'version', null);
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', 'version', '');
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', 'version', new String());
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', 'version', new String(''));
-            }, Error);
-            assert.throws(() => {
-                new Dependency('name', 'version', new Number(3));
-            }, Error);
+            assert.throws(() => new Dependency('name', 'version'), Error);
+            assert.throws(() => new Dependency('name', 'version', undefined), Error);
+            assert.throws(() => new Dependency('name', 'version', null), Error);
+            assert.throws(() => new Dependency('name', 'version', ''), Error);
+            assert.throws(() => new Dependency('name', 'version', Object('')), Error);
+            assert.throws(() => new Dependency('name', 'version', Object('')), Error);
+            assert.throws(() => new Dependency('name', 'version', Object(3)), Error);
         });
 
         it('should accept literal or String object as key-prefix', () => {
             assert.deepEqual(new Dependency('name', '---', 'xxx').key, 'xxx:name');
-            assert.deepEqual(new Dependency('name', '---', new String('xxx')).key, 'xxx:name');
+            assert.deepEqual(new Dependency('name', '---', Object('xxx')).key, 'xxx:name');
         });
 
         it('should extract additional repo-protocol from url', () => {
@@ -170,9 +128,9 @@ describe('Dependency', () => {
                     '---',
                     '---',
                     'home',
-                    'svn+http://svnrepo.com/test.svn'
+                    `svn+${'http'}://svnrepo.com/test.svn`
                 ).repoUrl,
-                'http://svnrepo.com/test.svn'
+                `${'http'}://svnrepo.com/test.svn`
             );
         });
 
