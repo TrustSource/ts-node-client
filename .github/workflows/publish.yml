@@ -13,10 +13,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    # id-token: write lets npm publish via trusted publishing (OIDC) instead of NPM_TOKEN
+    permissions:
+      id-token: write
+      contents: read
+
     strategy:
       matrix:
         include:
-          - node-version: 20.x
+          # trusted publishing requires npm >= 11.5.1, which Node 20 does not ship
+          - node-version: 24.x
 
     steps:
       - uses: actions/checkout@v3
@@ -29,5 +35,3 @@ jobs:
         run: npm i
       - name: Publish package
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
