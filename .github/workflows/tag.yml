@@ -1,0 +1,36 @@
+name: Tag version from package.json
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  tag:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get current version
+        id: get_version
+        run: |
+          echo VERSION=$(jq -r '.version' package.json) >> $GITHUB_OUTPUT
+      - name: Create tag if missing
+        env:
+          TAG: ${{ steps.get_version.outputs.VERSION }}
+        run: |
+          # dependabot merges keep the same version, so an existing tag is not an error
+          if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+            echo "Tag $TAG already exists, skipping"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG" -m "$TAG"
+          git push origin "$TAG"

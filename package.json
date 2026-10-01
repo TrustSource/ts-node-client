@@ -1,7 +1,7 @@
 {
   "name": "ts-node-client",
   "description": "npm / node module to transfer dependency information to TrustSource server.",
-  "version": "3.4.16",
+  "version": "3.4.17",
   "homepage": "https://app.trustsource.io/",
   "author": {
     "name": "Oleksandr Dmukhovskyi",
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@yarnpkg/lockfile": "1.1.0",
-    "axios": "1.18.1",
+    "axios": "1.20.0",
     "debuglog": "1.0.1",
     "js-yaml": "4.3.2",
     "packageurl-js": "1.2.1",
@@ -39,8 +39,8 @@
     "@eslint/js": "9.39.4",
     "eslint": "9.39.4",
     "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-sonarjs": "4.0.2",
-    "globals": "17.5.0",
+    "eslint-plugin-sonarjs": "4.2.2",
+    "globals": "17.13.0",
     "mocha": "11.7.5",
     "nock": "13.5.6"
   },
