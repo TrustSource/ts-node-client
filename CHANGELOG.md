@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## 3.4.18 - 2026-10-22
+
+### Security
+* bump follow-redirects to 1.16.1 (GHSA-q3jh-wrc6-jgq8, GHSA-8r9p-f939-6h3c)
+
+
 ## 3.4.17 - 2026-10-01
 
 ### Changed
@@ -108,11 +114,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 3.4.1 - 2024-08-13
 
-### Fixed
-* axios 1.7.2 allows SSRF via unexpected behavior where requests for path relative URLs get processed as protocol relative URLs.
-
 ### Changed
 * update to cyclonedx version 1.6
+
+### Fixed
+* axios 1.7.2 allows SSRF via unexpected behavior where requests for path relative URLs get processed as protocol relative URLs.
 
 
 ## 3.4.0 - 2024-06-18
@@ -160,11 +166,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 3.2.3 - 2023-11-24
 
-### Fixed
-* Fallback missing versions to `0.0.0`
-
 ### Changed
 * Bump `axios` to fix vulnerabilities
+
+### Fixed
+* Fallback missing versions to `0.0.0`
 
 
 ## 3.2.2 - 2023-09-06
@@ -261,14 +267,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.4.*
 
+### Added
+* option **--includeDevDependencies**. It is allow to scan dev dependencies
+
 ### Changed
 * Bump glob-parent from 5.1.1 to 5.1.2
 * Bump path-parse from 1.0.6 to 1.0.7
 * Bump lodash from 4.17.19 to 4.17.21
 * Bump y18n from 4.0.0 to 4.0.1
-
-### Added
-* option **--includeDevDependencies**. It is allow to scan dev dependencies
 
 
 ## 1.3.*
@@ -309,6 +315,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.2.*
 
+### Added
+* option **--config**. It is similar to credentials, but it will contain any config information.
+* option **--url**. It is similar to baseUrl.
+* option **--apiKey** and **--userName** so it will be unnecessary to create `.tsrc.json` file.
+* options **--version** and **--help**.
+* options shortcut.
+
 ### Changed
 * Added proxy support and config
 * Update travis config
@@ -320,10 +333,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 * options: **--credentials** and **--credentialsFile** instead you should use **--config**.
 * option **--baseUrl** instead you should use **--url**.
-
-### Added
-* option **--config**. It is similar to credentials, but it will contain any config information.
-* option **--url**. It is similar to baseUrl.
-* option **--apiKey** and **--userName** so it will be unnecessary to create `.tsrc.json` file.
-* options **--version** and **--help**.
-* options shortcut.

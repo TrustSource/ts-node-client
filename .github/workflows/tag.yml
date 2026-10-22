@@ -34,3 +34,21 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git tag -a "$TAG" -m "$TAG"
           git push origin "$TAG"
+      - name: Create release if missing
+        env:
+          TAG: ${{ steps.get_version.outputs.VERSION }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists, skipping"
+            exit 0
+          fi
+          # release notes are the CHANGELOG.md section of this version, without its heading
+          awk -v tag="$TAG" '
+            /^## / { if (found) exit; if (index($0, "## " tag " ") == 1 || $0 == "## " tag) { found = 1; next } }
+            found { print }
+          ' CHANGELOG.md | sed -e '/./,$!d' > release-notes.md
+          if [ ! -s release-notes.md ]; then
+            echo "No CHANGELOG.md entry for $TAG" > release-notes.md
+          fi
+          gh release create "$TAG" --title "$TAG" --notes-file release-notes.md --verify-tag
