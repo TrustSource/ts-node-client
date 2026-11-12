@@ -8,6 +8,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## 3.4.19 - 2026-11-11
+
+### Security
+* bump follow-redirects to 1.16.3 (GHSA-mrwp-f3q8-3g9p)
+* override glob to 14.0.4 for dev tooling (GHSA-3g3m-2fjr-6pw4)
+* override minimatch to 11.0.8 for dev tooling (GHSA-g3hv-75wg-m249)
+* require serialize-javascript ^7.1.3 (GHSA-m5mm-p8h7-m29v)
+
+
 ## 3.4.18 - 2026-10-22
 
 ### Security
