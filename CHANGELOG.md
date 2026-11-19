@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## 3.4.20 - 2026-11-19
+
+### Security
+* add Yarn resolutions for glob 14.0.4 under mocha (GHSA-3g3m-2fjr-6pw4)
+* add Yarn resolutions for minimatch 11.0.8 under mocha and eslint-plugin-sonarjs (GHSA-g3hv-75wg-m249)
+* align serialize-javascript Yarn resolution with npm override (^7.1.3)
+
+
 ## 3.4.19 - 2026-11-11
 
 ### Security
